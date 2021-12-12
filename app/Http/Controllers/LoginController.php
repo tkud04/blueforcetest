@@ -32,7 +32,7 @@ class LoginController extends Controller {
 		$cart = [];
 		if(Auth::check())
 		{
-			return redirect()->intended('dashboard');
+			return redirect()->intended('profile');
 		}
 		$signals = $this->helpers->signals;
 		$plugins = $this->helpers->getPlugins();
@@ -56,7 +56,7 @@ class LoginController extends Controller {
 		$cart = [];
 		if(Auth::check())
 		{
-			return redirect()->intended('dashboard');
+			return redirect()->intended('profile');
 		}
 		
 		$signals = $this->helpers->signals;

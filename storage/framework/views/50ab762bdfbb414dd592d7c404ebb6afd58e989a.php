@@ -27,7 +27,9 @@
   	<!--SweetAlert--> 
     <link href="<?php echo e(asset('lib/sweet-alert/sweetalert2.css')); ?>" rel="stylesheet">
     <script src="<?php echo e(asset('lib/sweet-alert/sweetalert2.js')); ?>"></script>
+<script src="js/slick.js"></script>
 
+<script src="js/script.js"></script>
 <?php echo $__env->yieldContent('styles'); ?>
 <?php echo $__env->yieldContent('scripts'); ?>
 
@@ -70,8 +72,8 @@ if(!isset($bannerClass)) $bannerClass = "";
 </div>
 <ul class="main-nav">
 <li class="active"><a href="<?php echo e(url('/')); ?>">HOME</a></li>
-<li class=""><a href="<?php echo e(url('about')); ?>">ABOUT</a></li>
-<li class=""><a href="<?php echo e(url('faq')); ?>">FAQ</a></li>
+<li class=""><a href="javascript:void(0)">ABOUT</a></li>
+<li class=""><a href="javascript:void(0)">FAQ</a></li>
 <li class="searchbar">
 <i class="fa fa-search" aria-hidden="true"></i>
 <div class="togglesearch" style="display: none;">
@@ -90,17 +92,17 @@ if(!isset($bannerClass)) $bannerClass = "";
 <li class="has-submenu">
 <a href="">ADMIN <i class="fas fa-chevron-down"></i></a>
 <ul class="submenu">
-<li><a href="<?php echo e(url('dashboard')); ?>">Dashboard</a></li>
+<li><a href="<?php echo e(url('profile')); ?>">Profile</a></li>
 <li><a href="<?php echo e(url('appointments')); ?>">Appointments</a></li>
 <li><a href="<?php echo e(url('users')); ?>">Users</a></li>
 </ul>
 </li>
 <?php else: ?>
 <li class="has-submenu">
-<a href="">MORE <i class="fas fa-chevron-down"></i></a>
+<a href="">Hello, <?php echo e($user->fname); ?> <i class="fas fa-chevron-down"></i></a>
 <ul class="submenu">
-<li><a href="<?php echo e(url('dashboard')); ?>">Dashboard</a></li>
-<li><a href="<?php echo e(url('book-appointments')); ?>">Book an Appointment</a></li>
+<li><a href="<?php echo e(url('profile')); ?>">Profile</a></li>
+<li><a href="<?php echo e(url('book-appointment')); ?>">Book an Appointment</a></li>
 </ul>
 </li>
 <?php endif; ?>
@@ -108,8 +110,12 @@ if(!isset($bannerClass)) $bannerClass = "";
 </ul>
 </div>
 <ul class="nav header-navbar-rht">
+<?php if(is_null($user)): ?>
 <li><a href="<?php echo e(url('login')); ?>">Log in</a></li>
-<li><a href="<?php echo e(url('signup')); ?>" class="login-btn">Signup </a></li>
+<li><a href="<?php echo e(url('signup')); ?>" class="login-btn">Sign up </a></li>
+<?php else: ?>
+<li><a href="<?php echo e(url('bye')); ?>" class="login-btn">Sign out </a></li>
+<?php endif; ?>
 <li class="lang-item dropdown">
 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><img src="img/flags/en.png" alt="Lang"> EN</a>
 <div class="dropdown-menu">
@@ -194,8 +200,8 @@ foreach($activities as $a)
 <div class="footer-widget footer-menu">
 <h2 class="footer-title">SUPPORT</h2>
 <ul>
-<li><a href="<?php echo e(url('privacy')); ?>">Privacy Policy</a></li>
-<li><a href="<?php echo e(url('terms')); ?>">Terms and Conditions</a></li>
+<li><a href="javascript:void(0)">Privacy Policy</a></li>
+<li><a href="javascript:void(0)">Terms and Conditions</a></li>
 </ul>
 </div>
 
@@ -233,7 +239,7 @@ foreach($activities as $a)
 </div>
 <div class="col-md-6 col-lg-4">
 <div class="copyright-text center-text">
-<p class="mb-0"><a href="<?php echo e(url('terms')); ?>">Terms and Conditions</a> - <a href="<?php echo e(url('privacy')); ?>">Privacy Policy</a></p>
+<p class="mb-0"><a href="javascript:void(0)">Terms and Conditions</a> - <a href="javascript:void(0)">Privacy Policy</a></p>
 </div>
 </div>
 <div class="col-md-2 col-lg-4 right-text">
@@ -257,8 +263,5 @@ foreach($activities as $a)
 </div>
 
 
-<script src="js/slick.js"></script>
-
-<script src="js/script.js"></script>
 </body>
 </html><?php /**PATH C:\bkupp\lokl\repo\blueforcetest\resources\views/layout.blade.php ENDPATH**/ ?>

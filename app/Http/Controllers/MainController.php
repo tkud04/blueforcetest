@@ -82,7 +82,7 @@ class MainController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function getInbox(Request $request)
+	public function getProfile(Request $request)
     {
 		$user = null;
 		$nope = false;
@@ -96,491 +96,134 @@ class MainController extends Controller {
 		if(Auth::check())
 		{
 			$user = Auth::user();
-				  $v = "messages"; 
-				  $msgs = $this->helpers->getMessages(['u' => $user->username,'l' => "inbox"]);
-				  $title = "Inbox";
-				  $label = "inbox";
-				  $subtitle = "View messages in your inbox";
-				  #dd($msgs);
-				  array_push($cpt,'msgs');
-				   array_push($cpt,'label');	
-				  array_push($cpt,'title');		
-				  array_push($cpt,'subtitle');		
-			  		   
-			
-		}
-		else
-		{
-			return redirect()->intended('/');
-		}
-		
-		return view($v,compact($cpt));
-		
-    } 
-    
-    /**
-	 * Show the application home page.
-	 *
-	 * @return Response
-	 */
-	public function getDrafts(Request $request)
-    {
-		$user = null;
-		$nope = false;
-		$v = "";
-		
-		$signals = $this->helpers->signals;
-		$plugins = $this->helpers->getPlugins();
-        $cpt = ['user','signals','plugins'];
-		$req = $request->all();
-		
-		if(Auth::check())
-		{
-			$user = Auth::user();
-				  $v = "messages"; 
-				  $msgs = $this->helpers->getMessages(['u' => $user->username,'l' => "drafts"]);
-				  $title = "Drafts";
-				  $label = "drafts";
-				  $subtitle = "View messages you're still editing";
-				  #dd($msgs);
-				  array_push($cpt,'msgs');	
-                   array_push($cpt,'label');					  
-				  array_push($cpt,'title');		
-				  array_push($cpt,'subtitle');		
-			  		   
-			
-		}
-		else
-		{
-			return redirect()->intended('/');
-		}
-		
-		return view($v,compact($cpt));
-		
-    } 
-    
-    /**
-	 * Show the application home page.
-	 *
-	 * @return Response
-	 */
-	public function getSent(Request $request)
-    {
-		$user = null;
-		$nope = false;
-		$v = "";
-		
-		$signals = $this->helpers->signals;
-		$plugins = $this->helpers->getPlugins();
-        $cpt = ['user','signals','plugins'];
-		$req = $request->all();
-		
-		if(Auth::check())
-		{
-			$user = Auth::user();
-				  $v = "messages"; 
-				  $msgs = $this->helpers->getMessages(['u' => $user->username,'l' => "sent"]);
-				  $title = "Sent";
-				  $label = "sent";
-				  $subtitle = "View messages you have sent";
-				  #dd($msgs);
-				  array_push($cpt,'msgs');	
-                   array_push($cpt,'label');					  
-				  array_push($cpt,'title');		
-				  array_push($cpt,'subtitle');		
-			  		   
-			
-		}
-		else
-		{
-			return redirect()->intended('/');
-		}
-		
-		return view($v,compact($cpt));
-		
-    } 
-    
-     /**
-	 * Show the application home page.
-	 *
-	 * @return Response
-	 */
-	public function getTrash(Request $request)
-    {
-		$user = null;
-		$nope = false;
-		$v = "";
-		
-		$signals = $this->helpers->signals;
-		$plugins = $this->helpers->getPlugins();
-        $cpt = ['user','signals','plugins'];
-		$req = $request->all();
-		
-		if(Auth::check())
-		{
-			$user = Auth::user();
-				  $v = "messages"; 
-				  $msgs = $this->helpers->getMessages(['u' => $user->username,'l' => "trash"]);
-				  $title = "Trash";
-				  $label = "trash";
-				  $subtitle = "View messages in your trash";
-				  #dd($msgs);
-				  array_push($cpt,'msgs');	
-                   array_push($cpt,'label');					  
-				  array_push($cpt,'title');		
-				  array_push($cpt,'subtitle');		
-			  		   
-			
-		}
-		else
-		{
-			return redirect()->intended('/');
-		}
-		
-		return view($v,compact($cpt));
-		
-    } 
-    
-     /**
-	 * Show the application home page.
-	 *
-	 * @return Response
-	 */
-	public function getSpam(Request $request)
-    {
-		$user = null;
-		$nope = false;
-		$v = "";
-		
-		$signals = $this->helpers->signals;
-		$plugins = $this->helpers->getPlugins();
-        $cpt = ['user','signals','plugins'];
-		$req = $request->all();
-		
-		if(Auth::check())
-		{
-			$user = Auth::user();
-				  $v = "messages"; 
-				  $msgs = $this->helpers->getMessages(['u' => $user->username,'l' => "spam"]);
-				  $title = "Spam";
-				  $label = "spam";
-				  
-				  $subtitle = "View messages that have been marked as spam";
-				  #dd($msgs);
-				  array_push($cpt,'msgs');
-                   array_push($cpt,'label');					  
-				  array_push($cpt,'title');		
-				  array_push($cpt,'subtitle');		
-			  		   
-			
-		}
-		else
-		{
-			return redirect()->intended('/');
-		}
-		
-		return view($v,compact($cpt));
-		
-    } 
-    
-    
-
-	/**
-	 * Show the application home page.
-	 *
-	 * @return Response
-	 */
-	public function getUsername(Request $request)
-    {
-		$user = null; $u = "nothing";
-		$req = $request->all();
-		
-		if(Auth::check())
-		{
-			$user = Auth::user();
-				  
-				  $u =$user->username;
-			
-		}
-		
-		return $u;
-		
-    } 
-	
-	/**
-	 * Show the application home page.
-	 *
-	 * @return Response
-	 */
-	public function getNewMessage(Request $request)
-    {
-		$user = null;
-		$nope = false;
-		$v = "";
-		
-		$signals = $this->helpers->signals;
-		$plugins = $this->helpers->getPlugins();
-        $cpt = ['user','signals','plugins'];
-		$req = $request->all();
-		
-		if(Auth::check())
-		{
-			$user = Auth::user();
-			$v = "new-message"; 
-		}
-		else
-		{
-			return redirect()->intended('/');
-		}
-		
-		return view($v,compact($cpt));
-		
-    }
-	
-	/**
-	 * Show the application home page.
-	 *
-	 * @return Response
-	 */
-	public function getMessage(Request $request)
-    {
-		$user = null;
-		$nope = false;
-		$v = "";
-		
-		$signals = $this->helpers->signals;
-		$plugins = $this->helpers->getPlugins();
-        $cpt = ['user','signals','plugins'];
-		$req = $request->all();
-		
-		if(Auth::check())
-		{
-			$user = Auth::user();
-			
-			  if(isset($req['xf']))
-			  {
-				  $v = "message"; 
-				  $m = $this->helpers->getMessage($req['xf']);
-				  #dd($m);
-				  if(count($m) > 0)
-				  {
-					  $req['op'] = "read";
-					  $this->helpers->updateMessage($req);
-					   $title = $m['subject'];
-					   $contacts = $this->helpers->getContacts($user->username);
-				  $subtitle = "";
-				  #dd($msgs);
-				  array_push($cpt,'m');		
-				  array_push($cpt,'title');		
-				  array_push($cpt,'subtitle');		
-				  array_push($cpt,'contacts');		
-				  }
-				  else
-				  {
-					  return redirect()->intended('/');
-				  }
+				  $v = "profile"; 
 				 
-			  }
-			  else
-			  {
-				  return redirect()->intended('/');
-			  }
 		}
 		else
 		{
-			$v = "login";
+			return redirect()->intended('/');
 		}
 		
 		return view($v,compact($cpt));
 		
-    }	
-	
-	/**
-	 * Show the application home page.
+    } 
+    
+   	/**
+	 * Show the application welcome screen to the user.
 	 *
 	 * @return Response
 	 */
-	public function getDownload(Request $request)
+    public function postProfile(Request $request)
     {
-		$user = null;
-		$nope = false;
-		$v = "";
-		
-		$signals = $this->helpers->signals;
-		$plugins = $this->helpers->getPlugins();
-        $cpt = ['user','signals','plugins'];
+        $user = null;
 		$req = $request->all();
-		
-		if(Auth::check())
-		{
-			$user = Auth::user();
-			
-			  if(isset($req['xf']))
-			  {
-				  $a = $this->helpers->getAttachment($req['xf'],['content' => true]);
-				  #dd($a);
-				  if(count($a) > 0)
-				  {
-					      $headers = ['Content-Type: '.$a['ctype']];
-                         return Response::streamDownload(function(){
-                                                  echo $a['content'];
-                                                }, $a['filename'], $headers);
-				  }
-				 
-			  }
-			  else
-			  {
-				  return redirect()->intended('/');
-			  }
-		}
-		else
-		{
-			$v = "login";
-		}
-		
-		return view($v,compact($cpt));
-		
-    }
-	
-	/**
-	 * Show the application home page.
-	 *
-	 * @return Response
-	 */
-	public function getSettings(Request $request)
-    {
-		//dd($this->helpers->md->isMobille());
-		$user = null;
-		$nope = false;
-		$v = "";
-		
-		$signals = $this->helpers->signals;
-		$plugins = $this->helpers->getPlugins();
-        $cpt = ['user','signals','plugins'];
-		$req = $request->all();
-		
-		if(Auth::check())
-		{
-			$user = Auth::user();
-			
-				  $v = "settings"; 
-				  $settings = $this->helpers->getUSettings($user->username);
-				  $sigs = $this->helpers->getUSignatures($user->username);
-				  $title = "Settings";
-				  $subtitle = "Your account settings";
-				  #dd($sigs);
-				  array_push($cpt,'settings');		
-				  array_push($cpt,'sigs');		
-				  array_push($cpt,'title');		
-				  array_push($cpt,'subtitle');			   
-			
-		}
-		else
-		{
-			$v = "login";
-		}
-		
-		return view($v,compact($cpt));
-		
-    }
-	
-	
-	
-	/**
-	 * Show list of FAQs.
-	 *
-	 * @return Response
-	 */
-	public function getFAQs(Request $request)
-    {
-		$user = null;
-		$v = "";
-		
-		$signals = $this->helpers->signals;
-		$plugins = $this->helpers->getPlugins();
-		
-		#$this->helpers->populateTips();
-        $cpt = ['user','signals','plugins'];
-				
-		if(Auth::check())
-		{
-			
-			$user = Auth::user();
-			
-			
-				$hasPermission = $this->helpers->hasPermission($user->id,['view_users','edit_users']);
-				#dd($hasPermission);
-				$req = $request->all();
-				
-				if($hasPermission)
-				{
-				 $v = "faqs";
-				 $faqs = $this->helpers->getFAQs();
-				 #dd($banners);
-				 array_push($cpt,'faqs');
-				}
-				else
-				{
-					session()->flash("permissions-status-error","ok");
-					return redirect()->intended('/');
-				}				
-			
-		}
-		else
-		{
-			$v = "login";
-		}
-		return view($v,compact($cpt));
-    }
-	
-	
-	/**
-	 * Show list of FAQ tags.
-	 *
-	 * @return Response
-	 */
-	public function getFAQTags(Request $request)
-    {
-		$user = null;
-		$v = "";
-		
-		$signals = $this->helpers->signals;
-		$plugins = $this->helpers->getPlugins();
-		
-		#$this->helpers->populateTips();
-        $cpt = ['user','signals','plugins'];
-				
-		if(Auth::check())
-		{
-			
-			$user = Auth::user();
-			
-			
-				$hasPermission = $this->helpers->hasPermission($user->id,['view_users','edit_users']);
-				#dd($hasPermission);
-				$req = $request->all();
-				
-				if($hasPermission)
-				{
-				 $v = "faq-tags";
-				 $tags = $this->helpers->getFAQTags();
-				 #dd($banners);
-				 array_push($cpt,'tags');
-				}
-				else
-				{
-					session()->flash("permissions-status-error","ok");
-					return redirect()->intended('/');
-				}				
-			
-		}
-		else
-		{
-			$v = "login";
-		}
-		return view($v,compact($cpt));
-    }
 
+       if(Auth::check())
+		{
+			$user = Auth::user();
+		}
+		else
+		{
+			return redirect()->intended('/');
+		}
+
+       #dd($req);
+	  
+			 $validator = Validator::make($req, [
+                             'fname' => 'required',
+                             'lname' => 'required'                  
+         ]);
+         
+         if($validator->fails())
+         {
+             session()->flash("validation-status-error","ok");
+			 return redirect()->back()->withInput();
+         }
+         
+         else
+         {
+             $req['xf'] = $user->id;
+             $this->helpers->updateUser($req);
+			 session()->flash("update-user-status","ok");
+			 return  redirect()->intended('profile');		
+          }	 
+		 
+		
+    } 
+
+/**
+	 * Show the application home page.
+	 *
+	 * @return Response
+	 */
+	public function getBook(Request $request)
+    {
+		$user = null;
+		$nope = false;
+		$v = "";
+		
+		$signals = $this->helpers->signals;
+		$plugins = $this->helpers->getPlugins();
+        $cpt = ['user','signals','plugins'];
+		$req = $request->all();
+		
+		if(Auth::check())
+		{
+			$user = Auth::user();
+				  $v = "book"; 
+				 
+		}
+		else
+		{
+			return redirect()->intended('/');
+		}
+		
+		return view($v,compact($cpt));
+		
+    } 
+    
+   	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+    public function postBook(Request $request)
+    {
+        $user = null;
+		$req = $request->all();
+
+       if(Auth::check())
+		{
+			$user = Auth::user();
+		}
+		else
+		{
+			return redirect()->intended('/');
+		}
+
+       #dd($req);
+	  
+			 $validator = Validator::make($req, [
+                             'fname' => 'required',
+                             'lname' => 'required'                  
+         ]);
+         
+         if($validator->fails())
+         {
+             session()->flash("validation-status-error","ok");
+			 return redirect()->back()->withInput();
+         }
+         
+         else
+         {
+             $req['xf'] = $user->id;
+             $this->helpers->updateUser($req);
+			 session()->flash("update-user-status","ok");
+			 return  redirect()->intended('profile');		
+          }	 
+		 
+		
+    }
 	
 	
 	

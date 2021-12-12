@@ -8,31 +8,10 @@ use Mail;
 use Auth;
 use Illuminate\Http\Request;
 use App\User;
-use App\Carts;
-use App\Ads;
-use App\Banners;
-use App\Senders;
-use App\Settings;
-use App\USettings;
-use App\USignatures;
 use App\Plugins;
 use App\Socials;
-use App\Messages;
-use App\Permissions;
-use App\Tickets;
-use App\TicketItems;
-use App\Faqs;
-use App\FaqTags;
-use App\Fmails;
-use App\Attachments;
-use App\Sessions;
-use App\Guests;
 use \Swift_Mailer;
 use \Swift_SmtpTransport;
-use \Cloudinary;
-use \Cloudinary\Api;
-use \Cloudinary\Api\Response;
-use Cloudinary\Api\Upload\UploadApi;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Exception\RequestException;
@@ -795,17 +774,11 @@ $subject = $data['subject'];
                    
                         if($u != null)
                         {
-							$role = $u->role;
-							if(isset($data['role'])) $role = $data['role'];
-							$status = $u->status;
-							if(isset($data['status'])) $status = $data['status'];
-							#$avatar = isset($data['avatar']) ? $data['avatar'] : "";
+							$up = [];
+							if(isset($data['fname'])) $up['fname'] = $data['fname'];
+							if(isset($data['lname'])) $up['lname'] = $data['lname'];
 							
-                        	$u->update(['fname' => $data['fname'],
-                                              'lname' => $data['lname'],
-                                              'role' => $role,
-                                              'status' => $status,
-                                           ]);
+                        	$u->update($up);
 						                   
                                            $ret = "ok";
                         }                                    

@@ -2,12 +2,12 @@
 $su = url("signup");
 ?>
 
-@extends('layout')
-
-@section('title',"Login")
 
 
-@section('content')
+<?php $__env->startSection('title',"Login"); ?>
+
+
+<?php $__env->startSection('content'); ?>
 
 <div class="content">
 <div class="container-fluid">
@@ -24,8 +24,9 @@ $su = url("signup");
 <h3>Log in</h3>
 </div>
 
- <form method="post" action="{{url('login')}}" id="l-form">
- {!! csrf_field() !!}
+ <form method="post" action="<?php echo e(url('login')); ?>" id="l-form">
+ <?php echo csrf_field(); ?>
+
 
 <div class="form-group form-focus">
 <input type="text" class="form-control floating" name="id" id="login-id" type="text" placeholder="Desired username">
@@ -36,7 +37,7 @@ $su = url("signup");
 <label class="focus-label">Create Password</label>
 </div>
 <div class="text-right">
-<a class="forgot-link" href="{{url('signup')}}">Don't have an account?</a>
+<a class="forgot-link" href="<?php echo e(url('signup')); ?>">Don't have an account?</a>
 </div>
 <button class="btn btn-primary btn-block btn-lg login-btn" id="l-form-btn">Login</button>
 <div class="login-or">
@@ -63,4 +64,6 @@ $su = url("signup");
 </div>
 
  	
-@stop
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\bkupp\lokl\repo\blueforcetest\resources\views/login.blade.php ENDPATH**/ ?>

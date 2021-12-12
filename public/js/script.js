@@ -8,16 +8,7 @@ Version      : 1.0
     "use strict";
 	
 	// Stick Sidebar
-	
-	if ($(window).width() > 767) {
-		if($('.theiaStickySidebar').length > 0) {
-			$('.theiaStickySidebar').theiaStickySidebar({
-			  // Settings
-			  additionalMarginTop: 70
-			});
-		}
-	}
-	
+
 	// Sticky Menu
 	
 	$(window).scroll(function(){
