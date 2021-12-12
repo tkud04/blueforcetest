@@ -1,10 +1,10 @@
-@extends('layout')
-
-@section('title',"Sign up")
 
 
+<?php $__env->startSection('title',"Sign up"); ?>
 
-@section('content')
+
+
+<?php $__env->startSection('content'); ?>
 
 <div class="content">
 <div class="container-fluid">
@@ -21,8 +21,9 @@
 <h3>Create an account</h3>
 </div>
 
- <form method="post" action="{{url('signup')}}" id="s-form">
- {!! csrf_field() !!}
+ <form method="post" action="<?php echo e(url('signup')); ?>" id="s-form">
+ <?php echo csrf_field(); ?>
+
 <div class="row">
 
 <div class="col-md-6">
@@ -51,7 +52,7 @@
 <label class="focus-label">Confirm Password</label>
 </div>
 <div class="text-right">
-<a class="forgot-link" href="{{url('login')}}">Already have an account?</a>
+<a class="forgot-link" href="<?php echo e(url('login')); ?>">Already have an account?</a>
 </div>
 <button class="btn btn-primary btn-block btn-lg login-btn" id="s-form-btn">Signup</button>
 <div class="login-or">
@@ -78,4 +79,6 @@
 </div>
 
  	
-@stop
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\bkupp\lokl\repo\blueforcetest\resources\views/signup.blade.php ENDPATH**/ ?>

@@ -81,10 +81,10 @@ foreach($activities as $a)
 <div class="container">
 <div class="row">
 <div class="col-md-10 mx-auto">
-<h5>We Are Best</h5>
-<h3>5500+ STUDENTS TRUSTED COURSES</h3>
+<h5>I'm Very Good</h5>
+<h3>5500+ SATISFIED TRUSTED CLIENTS</h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt ut laboreet dolore magna aliqua. Ut enim ad minim veniam, quised nostrud exercitation. Duis aute irure dolor in reprehen derit in voluptate </p>
-<div class="button"><a href="courses.html" class="btn all-btn">View all <i class="fas fa-caret-right right-arrow"></i></a></div>
+<div class="button"><a href="javascript:void(0)" class="btn all-btn">View all <i class="fas fa-caret-right right-arrow"></i></a></div>
 </div>
 </div>
 </div>

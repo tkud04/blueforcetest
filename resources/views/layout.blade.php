@@ -15,6 +15,19 @@
 
 <link rel="stylesheet" href="css/style.css">
 
+<script src="js/jquery-3.5.1.min.js"></script>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+
+	
+	<!-- custom js -->
+	<script src="{{asset('js/helpers.js').'?ver='.rand(56,99999)}}"></script>
+	<script src="{{asset('js/mmm.js').'?ver='.rand(56,99999)}}"></script>
+	
+  	<!--SweetAlert--> 
+    <link href="{{asset('lib/sweet-alert/sweetalert2.css')}}" rel="stylesheet">
+    <script src="{{asset('lib/sweet-alert/sweetalert2.js')}}"></script>
+
 @yield('styles')
 @yield('scripts')
 
@@ -28,6 +41,9 @@
 
 <div class="main-wrapper home">
 
+<?php
+if(!isset($bannerClass)) $bannerClass = "";
+?>
 
 <header class="header{{$bannerClass}}">
 <nav class="navbar navbar-expand-lg header-nav">
@@ -40,13 +56,13 @@
 </span>
 </a>
 <a href="{{url('/')}}" class="navbar-brand logo">
-<img src="img/logo.png" class="img-fluid" alt="Logo">
+<img src="img/logo.png" style="width: 100px; height: 50px" class="img-fluid" alt="Logo">
 </a>
 </div>
 <div class="main-menu-wrapper">
 <div class="menu-header">
 <a href="{{url('/')}}" class="menu-logo">
-<img src="img/logo.png" class="img-fluid" alt="Logo">
+<img src="img/logo.png" style="width: 100px; height: 50px" class="img-fluid" alt="Logo">
 </a>
 <a id="menu_close" class="menu-close" href="javascript:void(0);">
 <i class="fas fa-times"></i>
@@ -54,16 +70,6 @@
 </div>
 <ul class="main-nav">
 <li class="active"><a href="{{url('/')}}">HOME</a></li>
-@if(!is_null($user) && $user->role == "admin")
-<li class="has-submenu">
-<a href="">ADMIN <i class="fas fa-chevron-down"></i></a>
-<ul class="submenu">
-<li><a href="{{url('dashboard')}}">Dashboard</a></li>
-<li><a href="{{url('appointments')}}">Appointments</a></li>
-<li><a href="{{url('users')}}">Users</a></li>
-</ul>
-</li>
-@endif
 <li class=""><a href="{{url('about')}}">ABOUT</a></li>
 <li class=""><a href="{{url('faq')}}">FAQ</a></li>
 <li class="searchbar">
@@ -79,11 +85,31 @@
 </form>
 </div>
 </li>
+@if(!is_null($user))
+@if($user->role == "admin")
+<li class="has-submenu">
+<a href="">ADMIN <i class="fas fa-chevron-down"></i></a>
+<ul class="submenu">
+<li><a href="{{url('dashboard')}}">Dashboard</a></li>
+<li><a href="{{url('appointments')}}">Appointments</a></li>
+<li><a href="{{url('users')}}">Users</a></li>
+</ul>
+</li>
+@else
+<li class="has-submenu">
+<a href="">MORE <i class="fas fa-chevron-down"></i></a>
+<ul class="submenu">
+<li><a href="{{url('dashboard')}}">Dashboard</a></li>
+<li><a href="{{url('book-appointments')}}">Book an Appointment</a></li>
+</ul>
+</li>
+@endif
+@endif
 </ul>
 </div>
 <ul class="nav header-navbar-rht">
-<li><a href="login.html">Log in</a></li>
-<li><a href="register.html" class="login-btn">Signup </a></li>
+<li><a href="{{url('login')}}">Log in</a></li>
+<li><a href="{{url('signup')}}" class="login-btn">Signup </a></li>
 <li class="lang-item dropdown">
 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><img src="img/flags/en.png" alt="Lang"> EN</a>
 <div class="dropdown-menu">
@@ -91,13 +117,6 @@
 <img src="img/flags/en.png" alt="" height="16"> EN
 </a>
 </div>
-</li>
-<li class="course-amt">
-<a href="courses.html" class="user-circle"><img src="img/course.png" width="22" alt=""></a>
-<a href="courses.html" class="course">
-<span>Courses</span>
-<p>$200</p>
-</a>
 </li>
 </ul>
 </nav>
@@ -138,9 +157,9 @@
 <div class="col-lg-3 col-md-6">
 
 <div class="footer-widget footer-about">
-<h2 class="footer-title">ABOUT DreamsCLG</h2>
+<h2 class="footer-title">ABOUT Me</h2>
 <div class="footer-about-content">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat mauris Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat mauris </p>
+<p>I'm an enthusiastic and goal-oriented individuual with a knack for solving challenging problems and making a difference in this world. A full-stack software developer specializing in websites and mobile apps.</p>
 </div>
 </div>
 
@@ -148,13 +167,24 @@
 <div class="col-lg-3 col-md-6">
 
 <div class="footer-widget footer-menu">
-<h2 class="footer-title">POPULAR COURSES</h2>
+<h2 class="footer-title">POPULAR Activities</h2>
 <ul>
-<li><a href="courses.html">Development</a></li>
-<li><a href="courses.html">Business</a></li>
-<li><a href="courses.html">IT & Software</a></li>
-<li><a href="courses.html">Office Productivity</a></li>
-<li><a href="courses.html">Personal Development</a></li>
+<?php
+$activities = [
+['title' => "Build backend API",'desc' => "Develop backend API and business logic using Laravel or Node.js",],
+['title' => "Build frontend GUI",'desc' => "Design web application UI using Bootstrap or React + Material UI",],
+['title' => "Build mobile app",'desc' => "Develop mobile apps for Android and iOS using React Native",],
+['title' => "Build backend API",'desc' => "Write backend coode in Laravel or Node.js",],
+['title' => "Build backend API",'desc' => "Write backend coode in Laravel or Node.js",],
+];
+
+foreach($activities as $a)
+{
+?>
+<li><a href="javascript:void(0)">{{$a['title']}}</a></li>
+<?php
+}
+?>
 </ul>
 </div>
 
@@ -164,11 +194,8 @@
 <div class="footer-widget footer-menu">
 <h2 class="footer-title">SUPPORT</h2>
 <ul>
-<li><a href="booking.html">Booking</a></li>
-<li><a href="chat.html">Chat</a></li>
-<li><a href="reviews.html">Reviews</a></li>
-<li><a href="favourites.html">Favourites </a></li>
-<li><a href="college.html">College</a></li>
+<li><a href="{{url('privacy')}}">Privacy Policy</a></li>
+<li><a href="{{url('terms')}}">Terms and Conditions</a></li>
 </ul>
 </div>
 
@@ -229,10 +256,6 @@
 
 </div>
 
-
-<script src="js/jquery-3.5.1.min.js"></script>
-
-<script src="js/bootstrap.bundle.min.js"></script>
 
 <script src="js/slick.js"></script>
 
