@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Attachments extends Model
+class Appointments extends Model
 {
 
     /**
@@ -13,6 +13,6 @@ class Attachments extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'message_id', 'cid', 'ctype', 'filename', 'content', 'checksum', 'size'
+        'id', 'user_id', 'appt_date', 'amount', 'status'
     ];
 }

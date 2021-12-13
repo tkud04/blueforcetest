@@ -201,24 +201,25 @@ class MainController extends Controller {
 			return redirect()->intended('/');
 		}
 
-       dd($req);
+       #dd($req);
 	  
 			 $validator = Validator::make($req, [
-                             'fname' => 'required',
-                             'lname' => 'required'                  
+                             'appt_date' => 'required',
+                             'hours' => 'required'                  
+                             'amount' => 'required'                  
          ]);
          
          if($validator->fails())
          {
              session()->flash("validation-status-error","ok");
-			 return redirect()->back()->withInput();
+			 return redirect()->back();
          }
          
          else
          {
              $req['xf'] = $user->id;
-             $this->helpers->updateUser($req);
-			 session()->flash("update-user-status","ok");
+             $this->helpers->createAppointment($req);
+			 session()->flash("boook-status","ok");
 			 return  redirect()->intended('profile');		
           }	 
 		 
