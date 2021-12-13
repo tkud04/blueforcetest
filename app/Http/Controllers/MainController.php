@@ -201,7 +201,7 @@ class MainController extends Controller {
 			return redirect()->intended('/');
 		}
 
-       #dd($req);
+       dd($req);
 	  
 			 $validator = Validator::make($req, [
                              'fname' => 'required',
