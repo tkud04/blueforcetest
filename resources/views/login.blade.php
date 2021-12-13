@@ -33,7 +33,7 @@ $su = url("signup");
 </div>
 <div class="form-group form-focus">
 <input type="password" class="form-control floating" name="password" id="login-password" placeholder="Password">
-<label class="focus-label">Create Password</label>
+<label class="focus-label">Password</label>
 </div>
 <div class="text-right">
 <a class="forgot-link" href="{{url('signup')}}">Don't have an account?</a>
