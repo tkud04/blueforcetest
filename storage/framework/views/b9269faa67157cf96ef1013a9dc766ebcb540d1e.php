@@ -43,7 +43,7 @@
 <label class="focus-label">Appointment date</label>
 </div>
 <div class="form-group form-focus">
-<input type="text" class="form-control floating" name="hours" id="book-hours" placeholder="How many hours?">
+<input type="number" class="form-control floating" name="hours" id="book-hours" placeholder="How many hours?">
 <label class="focus-label">Session duration (hours)</label>
 </div>
 <div class="form-group form-focus">

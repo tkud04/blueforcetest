@@ -36,13 +36,12 @@ Route::post('profile', 'MainController@postProfile');
 Route::get('book-appointment', 'MainController@getBook');
 Route::post('book-appointment', 'MainController@postBook');
 
+
 //Admin
-Route::get('users', 'AdminController@getUsers');
-Route::get('new-user', 'AdminController@getAddUser');
-Route::post('new-user', 'AdminController@postAddUser');
-Route::get('user', 'AdminController@getUser');
-Route::post('user', 'AdminController@postUser');
-Route::get('edu', 'AdminController@getEnableDisableUser');
+Route::get('appointments', 'MainController@getAppointments');
+Route::get('remove-appointment', 'MainController@getRemoveAppointment');
+Route::get('users', 'MainController@getUsers');
+Route::get('remove-user', 'MainController@getRemoveUser');
 
 
 

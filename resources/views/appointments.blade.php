@@ -1,7 +1,7 @@
 
 @extends('layout')
 
-@section('title',"Users")
+@section('title',"Appointments")
 
 @section('scripts')
   <link href="{{asset('lib/datatables/css/datatables.min.css')}}" rel="stylesheet" /> 
@@ -14,7 +14,7 @@
 
 @section('content')
 
-@include('page-header',['title' => "Users"])
+@include('page-header',['title' => "Appointments"])
 
 
 <div class="content">
@@ -28,7 +28,7 @@
 <nav class="user-tabs mb-4">
 <ul class="nav nav-tabs nav-tabs-bottom nav-justified">
 <li class="nav-item">
-<a class="nav-link active" href="#pat_appointments" data-toggle="tab">Users</a>
+<a class="nav-link active" href="#pat_appointments" data-toggle="tab">Appointments</a>
 </li>
 </ul>
 </nav>
@@ -43,10 +43,11 @@
 <table class="table table-hover table-center mb-0 etuk-table">
 <thead>
 <tr>
-<th>Full name</th>
-<th>Username</th>
-<th>Role</th>
-<th>Date joined</th>
+<th>User</th>
+<th>Appt Date</th>
+<th>Booking Date</th>
+<th>Amount</th>
+<th>Status</th>
 <th></th>
 </tr>
 </thead>
@@ -54,12 +55,20 @@
 <?php
 $vu = "javascript:void(0)";
 
-if(count($users) > 0)
+if(count($appts) > 0)
 {
-  foreach($users as $a)
+  foreach($appts as $a)
   {
-	  $ad = explode(' ',$a['date']);	  
-	  $ru = url('remove-user').'?xf='.$a['id'];
+	  $ad = explode(' ',$a['appt_date']);
+	  $bd = explode(' ',$a['date']);
+	  $amt = number_format($a['amount'],2);
+	  
+	  $u = $a['user'];
+	  $s = $a['status']; $ss = "success";
+	  if($s == "cancelled") $ss = "danger";
+	  else if($s == "pending") $ss = "warning";
+	  
+	  $ru = url('remove-appointment').'?xf='.$a['id'];
 	  
 ?>
 <tr>
@@ -68,13 +77,14 @@ if(count($users) > 0)
 <a href="{{$vu}}" class="avatar avatar-sm mr-2">
 <img class="avatar-img rounded-circle" src="img/instructor-01.jpg" alt="User Image">
 </a>
-<a href="{{$vu}}">{{$a['fname']}} <span>{{$a['lname']}}</span></a>
+<a href="{{$vu}}">{{$u['fname']}} <span>{{$u['lname']}}</span></a>
 </h2>
 </td>
-<td>{{$a['username']}} </td>
-<td>{{$a['role']}} </td>
 <td>{{$ad[0]}} <span class="d-block text-info">{{$ad[1]." ".$ad[2]}}</span></td>
-<td>
+<td>{{$bd[0]}} </td>
+<td>&#8358;{{$amt}}</td>
+<td><span class="badge badge-pill bg-{{$ss}}-light">{{ucwords($s)}}</span></td>
+<td class="text-right">
 <div class="table-action">
 <a href="javascript:void(0);" class="btn btn-sm bg-info-light">
 <i class="fas fa-eye"></i> View

@@ -3,6 +3,15 @@
 
 @section('title',"Profile")
 
+@section('scripts')
+  <link href="{{asset('lib/datatables/css/datatables.min.css')}}" rel="stylesheet" /> 
+	
+	<!-- DataTables js -->
+	<script src="{{asset('lib/datatables/js/datatables.min.js')}}"></script>
+	 <script src="{{asset('lib/datatables/js/datatables-init.js')}}"></script>
+	 
+@stop
+
 @section('content')
 
 @include('page-header',['title' => "Profile"])
@@ -34,33 +43,47 @@
 <div class="card card-table mb-0">
 <div class="card-body">
 <div class="table-responsive">
-<table class="table table-hover table-center mb-0">
+<table class="table table-hover table-center mb-0 etuk-table">
 <thead>
 <tr>
 <th>Instructor</th>
 <th>Appt Date</th>
 <th>Booking Date</th>
 <th>Amount</th>
-<th>Follow Up</th>
 <th>Status</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
+<?php
+$vu = "javascript:void(0)";
+
+if(count($appts) > 0)
+{
+  foreach($appts as $a)
+  {
+	  $ad = explode(' ',$a['appt_date']);
+	  $bd = explode(' ',$a['date']);
+	  $amt = number_format($a['amount'],2);
+	  
+	  $s = $a['status']; $ss = "success";
+	  if($s == "cancelled") $ss = "danger";
+	  else if($s == "pending") $ss = "warning";
+	  
+?>
 <tr>
 <td>
 <h2 class="table-avatar">
-<a href="instructor-profile.html" class="avatar avatar-sm mr-2">
+<a href="{{$vu}}" class="avatar avatar-sm mr-2">
 <img class="avatar-img rounded-circle" src="img/instructor-01.jpg" alt="User Image">
 </a>
-<a href="instructor-profile.html">Me <span>Instructor</span></a>
+<a href="{{$vu}}">Me <span>Instructor</span></a>
 </h2>
 </td>
-<td>14 Nov 2019 <span class="d-block text-info">10.00 AM</span></td>
-<td>12 Nov 2019</td>
-<td>$160</td>
-<td>16 Nov 2019</td>
-<td><span class="badge badge-pill bg-success-light">Confirm</span></td>
+<td>{{$ad[0]}} <span class="d-block text-info">{{$ad[1]." ".$ad[2]}}</span></td>
+<td>{{$bd[0]}} </td>
+<td>&#8358;{{$amt}}</td>
+<td><span class="badge badge-pill bg-{{$ss}}-light">{{ucwords($s)}}</span></td>
 <td class="text-right">
 <div class="table-action">
 <a href="javascript:void(0);" class="btn btn-sm bg-primary-light">
@@ -72,81 +95,10 @@
 </div>
 </td>
 </tr>
-<tr>
-<td>
-<h2 class="table-avatar">
-<a href="instructor-profile.html" class="avatar avatar-sm mr-2">
-<img class="avatar-img rounded-circle" src="img/instructor-01.jpg" alt="User Image">
-</a>
-<a href="instructor-profile.html">Me <span>Instructor</span></a>
-</h2>
-</td>
-<td>12 Nov 2019 <span class="d-block text-info">8.00 PM</span></td>
-<td>12 Nov 2019</td>
-<td>$250</td>
-<td>14 Nov 2019</td>
-<td><span class="badge badge-pill bg-success-light">Confirm</span></td>
-<td class="text-right">
-<div class="table-action">
-<a href="javascript:void(0);" class="btn btn-sm bg-primary-light">
-<i class="fas fa-print"></i> Print
-</a>
-<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
-<i class="far fa-eye"></i> View
-</a>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<h2 class="table-avatar">
-<a href="instructor-profile.html" class="avatar avatar-sm mr-2">
-<img class="avatar-img rounded-circle" src="img/instructor-01.jpg" alt="User Image">
-</a>
-<a href="instructor-profile.html">Me <span>Instructor</span></a>
-</h2>
-</td>
-<td>11 Nov 2019 <span class="d-block text-info">11.00 AM</span></td>
-<td>10 Nov 2019</td>
-<td>$400</td>
-<td>13 Nov 2019</td>
-<td><span class="badge badge-pill bg-danger-light">Cancelled</span></td>
-<td class="text-right">
-<div class="table-action">
-<a href="javascript:void(0);" class="btn btn-sm bg-primary-light">
-<i class="fas fa-print"></i> Print
-</a>
-<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
-<i class="far fa-eye"></i> View
-</a>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<h2 class="table-avatar">
-<a href="instructor-profile.html" class="avatar avatar-sm mr-2">
-<img class="avatar-img rounded-circle" src="img/instructor-01.jpg" alt="User Image">
-</a>
-<a href="instructor-profile.html">Me <span>Instructor</span></a>
-</h2>
-</td>
-<td>10 Nov 2019 <span class="d-block text-info">3.00 PM</span></td>
-<td>10 Nov 2019</td>
-<td>$350</td>
-<td>12 Nov 2019</td>
-<td><span class="badge badge-pill bg-warning-light">Pending</span></td>
-<td class="text-right">
-<div class="table-action">
-<a href="javascript:void(0);" class="btn btn-sm bg-primary-light">
-<i class="fas fa-print"></i> Print
-</a>
-<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
-<i class="far fa-eye"></i> View
-</a>
-</div>
-</td>
-</tr>
+<?php
+  }
+}
+?>
 
 </tbody>
 </table>

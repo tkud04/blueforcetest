@@ -28,107 +28,28 @@ class Helper implements HelperContract
                      //SUCCESS NOTIFICATIONS
 					 "login-status" => "Welcome back!",            
                      "update-user-status" => "User profile updated.",
+                     "remove-user-status" => "User profile removed.",
                      "book-status" => "Appointment booked!",
-                     "switch-mode-status" => "You have now switched your account mode.",
-					 "valid-mode-status-error" => "Access denied. Try switching your account mode to access the resource.",
-					 "sci-status" => "Cover image updated.",
-					 "cover-image-status-error" => "You cannot delete the cover image.",
-					 "ri-status" => "Image deleted.",
-					 "delete-avatar-status" => "Avatar removed.",
-					 "delete-apartment-status" => "Apartment removed.",
-					 "update-apartment-status" => "Apartment information updated.",
-					 "oauth-sp-status" => "Welcome to Etuk NG! You can now use your new account.",
-					 "add-review-status" => "Thanks for your review! It will be displayed after review by our admins.",
-					 "add-to-cart-status" => "Added to your cart.",
-					 "remove-from-cart-status" => "Removed from your cart.",
-					 "pay-card-status" => "Payment successful. Have a lovely stay!",
-					 "save-apartment-status" => "Apartment saved.",
-					 "save-duplicate-apartment-status" => "You have saved this apartment already.",
-					 "add-permissions-status" => "Permission(s) added.",
-					 "remove-permission-status" => "Permission(s) removed.",
-					 "update-review-status" => "Review updated.",
-					 "remove-review-status" => "Review removed.",
-					 "add-plugin-status" => "Plugin installed.",
+                     "update-appt-status" => "Appointment info updated!",
+                     "remove-appt-status" => "Appointment removed.",
 					 "update-plugin-status" => "Plugin updated.",
 					 "remove-plugin-status" => "Plugin removed.",
 	                                 "add-sender-status" => "Sender added",
                                          "remove-sender-status" => "Sender removed",
                                          "mark-sender-status" => "Sender updated",
-					 "remove-ticket-status" => "Ticket removed.",
-					 "add-ticket-status" => "Ticket created.",
-					 "update-ticket-status" => "Ticket updated.",
-					 "add-banner-status" => "Banner image uploaded.",
-					 "update-banner-status" => "Banner info updated.",
-					 "remove-banner-status" => "Banner image removed.",
-					 "add-faq-status" => "FAQ added.",
-					 "update-faq-status" => "FAQ updated.",
-					 "remove-faq-status" => "FAQ removed.",
-					 "add-faq-tag-status" => "FAQ tag added.",
-					 "remove-faq-tag-status" => "FAQ tag removed.",
-					 "add-post-status" => "Post added.",
-					 "update-post-status" => "Post updated.",
-					 "remove-post-status" => "Post removed.",
-					 "add-reservation-status" => "Reservation added.",
-					 "update-reservation-status" => "Reservation log updated.",
-					 "remove-reservation-status" => "Reservation log removed.",
-					 "respond-to-reservation-status" => "Response sent.",
-					 "add-plan-status" => "Subscription plan added.",
-					 "update-plan-status" => "Subscription plan updated.",
-					 "remove-plan-status" => "Subscription plan removed.",
-					 "send-message-status" => "Message sent!",
-					 "add-apartment-tip-status" => "Tip added!",
-					 "remove-apartment-tip-status" => "Tip removed!",
 					 
 					 //ERROR NOTIFICATIONS
 					 "invalid-user-status-error" => "User not found.",
-					 "invalid-apartment-id-status-error" => "Apartment not found.",
-					 "add-review-status-error" => "Please sign in to add a review.",
-					 "duplicate-review-status-error" => "You have added a review already.",
 					 "oauth-status-error" => "Social login failed, please try again.",
 					 "login-auth-status-error" => "Your login/password was not correct.",
-					 "cart-auth-status-error" => "Please sign in to view your cart.",
-					 "save-apartment-auth-status-error" => "Please sign in to save an apartment.",
 					 "validation-status-error" => "Please fill all required fields.",
-					 "add-to-cart-host-status-error" => "You cannot book your own apartment.",
 					 "rp-invalid-token-status-error" => "The code is invalid or has expired.",
-					 "pay-card-status-error" => "Your payment could not be processed, please try again.",
-					 "save-apartment-status-error" => "Apartment could not be saved, please try again.",
-					 "add-permissions-status-error" => "Permission(s) could not be added, please try again.",
-					 "remove-permission-status-error" => "Permission(s) could not be removed, please try again.",
-					 "update-review-status-error" => "Review could not be updated, please try again.",
-					 "remove-review-status-error" => "Review could not be removed, please try again.",
-					 "update-plugin-status-error" => "Plugin could not be updated, please try again.",
-					 "remove-plugin-status-error" => "Plugin could not be removed, please try again.",
-					 "remove-ticket-status-error" => "Ticket could not be removed, please try again.",
-					 "permissions-status-error" => "Access denied.",
-					 "add-ticket-status-error" => "Ticket could not be created, please try again",
-					 "update-ticket-status-error" => "Ticket could not be updated, please try again.",
 					 "network-status-error" => "Network error occured, please check your Internet connection and try again.",
-					 "add-banner-status-error" => "Banner could not be created, please try again",
-					 "update-banner-status-error" => "Banner could not be updated, please try again",
-					 "remove-banner-status-error" => "Banner could not be removed, please try again",
-					 "add-faq-status-error" => "FAQ could not be added, please try again.",
-					 "update-faq-status-error" => "FAQ could not be updated, please try again.",
-					 "remove-faq-status-error" => "FAQ could not be removed, please try again.",
-					 "add-faq-tag-status-error" => "FAQ tag could not be added, please try again.",
-					 "remove-faq-tag-status-error" => "FAQ tag could not be removed, please try again.",
-					 "add-post-status-error" => "Post could not be added, please try again.",
-					 "update-post-status-error" => "Post could not be updated, please try again.",
-					 "remove-post-status-error" => "Post could not be removed, please try again.",
-					 "add-reservation-status-error" => "Reservation could not be created, please try again",
-					 "update-reservation-status-error" => "Reservation could not be updated, please try again.",
-					 "remove-reservation-status-error" => "Reservation could not be removed, please try again.",
-					 "add-plan-status-error" => "Subscription plan could not be added, please try again.",
-					 "update-plan-status-error" => "Subscription plan could not be updated, please try again.",
-					 "remove-plan-status-error" => "Subscription plan could not be removed, please try again.",
-					 "send-message-status-error" => "An error occured while sending your message.",
-					 "add-apartment-tip-status-error" => "An error occured while adding tip.",
-					 "remove-apartment-tip-status-error" => "An error occured while removing tip.",
-                     ],
-                     'errors'=> ["login-status-error" => "Wrong username or password, please try again.",
-					 "signup-status-error" => "There was a problem creating your account, please try again.",
-					 "update-profile-status-error" => "There was a problem updating your profile, please try again.",
-                    ]
+					 "book-status-error" => "An error occured trying to book your appointment.",
+                     "update-appt-status-error" => "An error occured trying to update appointment info.",
+                     "remove-appt-status-error" => "An error occured trying to remove appointment info."
+					 ]
+                     
                    ];
 
            
@@ -264,136 +185,7 @@ $subject = $data['subject'];
            }
 		   
 		   
-		   function text($data) 
-           {
-           	//form query string
-              // $qs = "sn=".$data['sn']."&sa=".$data['sa']."&subject=".$data['subject'];
-
-               $lead = $data['to'];
-			   
-			   if($lead == null || $lead == "")
-			   {
-				    $ret = json_encode(["status" => "error","message" => "Invalid number"]);
-			   }
-			   else
-			    { 
-                  
-			       $url = "https://smartsmssolutions.com/api/?";
-			       $url .= "message=".urlencode($data['msg'])."&to=".$data['to'];
-			       $url .= "&sender=Etuk+NG&type=0&routing=3&token=".env('SMARTSMS_API_X_KEY', '');
-			      #dd($url);
-				  
-                  $dt = [
-				       'headers' => [
-					     'Content-Type' => "text/html"
-					   ],
-                       'method' => "get",
-                       'url' => $url
-                  ];
-				
-				 $ret = $this->bomb($dt);
-				 #dd($ret);
-				 $smsData = explode("||",$ret);
-				 if(count($smsData) == 2)
-				 {
-					 $status = $smsData[0];
-					 $dt = $smsData[1];
-					 
-					 if($status == "1000")
-					 {
-						$rett = json_decode($dt);
-			            if($rett->code == "1000")
-			            {
-					      $ret = json_encode(["status" => "ok","message" => "Message sent!"]); 			
-			             }
-				         else
-			             {
-			         	   $ret = json_encode(["status" => "error","message" => "Error sending message."]); 
-			             } 
-					 }
-					 else
-					 {
-						 $ret = json_encode(["status" => "error","message" => "Error sending message."]); 
-					 }
-				 }
-				 else
-				 {
-					$ret = json_encode(["status" => "error","message" => "Malformed response from SMS API"]); 
-				 }
-			     
-			    }
-				
-              return $ret; 
-           }
-		   
-		    function deleteCloudImage($id)
-          {
-          	$dt = ['cloud_name' => "kloudtransact",'invalidate' => true];
-          	$rett = \Cloudinary\Uploader::destroy($id,$dt);
-                                                     
-             return $rett; 
-         }
-		 
-		 function resizeImage($res,$size)
-		 {
-			  $ret = Image::make($res)->resize($size[0],$size[1])->save(sys_get_temp_dir()."/upp");			   
-              // dd($ret);
-			   $fname = $ret->dirname."/".$ret->basename;
-			   $fsize = getimagesize($fname);
-			  return $fname;		   
-		 }
-		   
-		    function uploadCloudImage($path)
-          {
-			 // $cloudinary = new Cloudinary();
-          	$ret = [];
-          	$dt = ['cloud_name' => "kloudtransact"];
-              $preset = "gjbdj9bt";
-          	$rett = (new uploadApi())->unsignedUpload($path,$preset,$dt);
-                                                      
-             return $rett; 
-         }
-		   
-		   function getCloudinaryImage($dt)
-		   {
-			   $ret = [];
-                  //dd($dt);       
-               if(is_null($dt)) { $ret = "img/no-image.png"; }
-               
-			   else
-			   {
-				    $ret = "https://res.cloudinary.com/kloudtransact/raw/upload/v1634740095/".$dt;
-                }
-				
-				return $ret;
-		   }
-		   
-		   function getCloudinaryImages($dt)
-		   {
-			   $ret = [];
-                  //dd($dt);       
-               if(count($dt) < 1) { $ret = ["img/no-image.png"]; }
-               
-			   else
-			   {
-                   $ird = $dt[0]['url'];
-				   if($ird == "none")
-					{
-					   $ret = ["img/no-image.png"];
-					}
-				   else
-					{
-                       for($x = 0; $x < count($dt); $x++)
-						 {
-							 $ird = $dt[$x]['url'];
-                            $imgg = $this->getCloudinaryImage($ird);
-                            array_push($ret,$imgg); 
-                         }
-					}
-                }
-				
-				return $ret;
-		   }
+		
 		   
 		   
            function createUser($data)
@@ -410,34 +202,7 @@ $subject = $data['subject'];
                                                       
                 return $ret;
            }
-		   
-		   function createSetting($data)
-           {
-			    $ret = Settings::create(['name' => $data['name'], 
-                                                      'value' => $data['value']
-                                                      ]);
-                                                      
-                return $ret;
-           }
-		   
-		   	function getSetting($id)
-	{
-		$temp = [];
-		$s = Settings::where('id',$id)
-		             ->orWhere('name',$id)->first();
- 
-              if($s != null)
-               {
-				      $temp['name'] = $s->name; 
-                       $temp['value'] = $s->value;                  
-                       $temp['id'] = $s->id; 
-                       $temp['date'] = $s->created_at->format("jS F, Y"); 
-                       $temp['updated'] = $s->updated_at->format("jS F, Y"); 
-                   
-               }      
-       return $temp;            	   
-   }
-		   
+		
    function getUsers()
    {
 	   $ret = [];
@@ -518,8 +283,8 @@ $subject = $data['subject'];
                }                                 
                   return $ret;                               
            }
-
-		   function updateEDU($data)
+		   
+		   function removeUser($data)
            {  
               $ret = 'error'; 
          
@@ -529,11 +294,8 @@ $subject = $data['subject'];
                    
                         if($u != null)
                         {
-							$status = $data['type'] == "enable" ? "enabled" : "disabled";
-							
-                        	$u->update(['status' => $status]);
-						                   
-                             $ret = "ok";
+							$u->delete();
+						    $ret = "ok";
                         }                                    
                }                                 
                   return $ret;                               
@@ -740,13 +502,6 @@ function isDuplicateUser($data)
            	return $ret;
            }
 		   
-		   function generateSKU()
-           {
-           	$ret = "ETUK".rand(1,9999)."GN".rand(1,999);
-                                                      
-                return $ret;
-           }
-		   
 
 
 
@@ -893,90 +648,25 @@ function createSocial($data)
 		   }
 		   
 		   
-		   function createFmail($dt)
-		   {
-			   $msg = json_encode($dt);
-			   $m = json_decode($msg,true);
-				   $t = $m['to']; $f = $m['from'];
-				   $r = $t['value'][0]; $s = $f['value'][0];
-				   $username = explode('@',$r['address']);
-			
-			   $fields = [
-			   'username' => $username[0],
-			   'sa' => $s['address'],
-			   'subject' => $m['subject'],
-			   'content' => $m['textAsHtml']
-			   ];
-			   //$this->createSetting(['name' => 'fields', 'value' => json_encode($fields)]);
-			   $mm = Messages::where($fields)->first();
-			 
-			   if($mm == null)
-               {               	
-                   $ret = Fmails::create(['message_id' => "", 'message' => $msg]);
-				   $this->parseMessage($ret->id);
-              }
-			   else
-			   {
-			      $ret = ['msg' => "duplicate"];
-			   }
-				return $ret;
-		   }
+		
 		   
-		   function getFmails()
-           {
-           	$ret = [];
-			  $messages = Fmails::where('id','>','0')->get();
-			  
-              if($messages != null)
-               {
-				   $messages = $messages->sortByDesc('created_at');	
-			  
-				  foreach($messages as $m)
-				  {
-					  $temp = $this->getFmail($m->id);
-					  array_push($ret,$temp);
-				  }
-               }                         
-                                  
-                return $ret;
-           }
-		   
-		   function getFmail($id)
+		   function createAppointment($dt)
 		   {
-			   $ret = [];
-			   $m = Fmails::where('id',$id)->first();
-			   
-			   if($m != null)
-               {
-				  $temp = [];
-				  $temp['id'] = $m->id;
-				  $temp['message'] =$m->message;
-				  $temp['message_id'] =$m->message_id;
-     			  $temp['date'] = $m->created_at->format("m/d/Y h:i A");
-				  $ret = $temp;
-               }
-
-               return $ret;			   
-		   }
-		   
-		   function createAttachment($dt)
-		   {
-			    $ret = Attachments::create([
-				   'message_id' => $dt['message_id'],
-				   'cid' => $dt['cid'],
-				   'ctype' => $dt['ctype'],
-				   'filename' => $dt['filename'],
-				   'content' => $dt['content'],
-				   'checksum' => $dt['checksum'],
-				   'size' => $dt['size'],
+			    $ret = Appointments::create([
+				   'user_id' => $dt['user_id'],
+				   'appt_date' => $dt['appt_date'],
+				   'amount' => $dt['amount'],
+				   'status' => "confirmed"
 				]);
 				return $ret;
 		   }
 		   
-		   function getAttachments($mid)
+		   function getAppointments($mid="all")
            {
            	$ret = [];
-			  $atts = Attachments::where('message_id',$mid)->get();
+			  $atts = null;
+			  if($mid == "all") $atts = Appointments::where('id','>',0)->get();
+			  else $atts = Appointments::where('user_id',$mid)->get();
 			  
               if($atts != null)
                {
@@ -984,7 +674,7 @@ function createSocial($data)
 			  
 				  foreach($atts as $a)
 				  {
-					  $temp = $this->getAttachment($a->id,[]);
+					  $temp = $this->getAppointment($a->id,$mid);
 					  array_push($ret,$temp);
 				  }
                }                         
@@ -992,396 +682,63 @@ function createSocial($data)
                 return $ret;
            }
 		   
-		   function getAttachment($id,$dt)
+		   function getAppointment($id,$mid)
 		   {
 			   $ret = [];
-			   $a = Attachments::where('id',$id)->first();
+			   $a = Appointments::where('id',$id)->first();
 			  # dd($a);
-			   $content = isset($dt['content']) ? true : false;
-			   if($a != null)
+			  
+			  if($a != null)
                {
 				  $temp = [];
 				  $temp['id'] = $a->id;
-				  $temp['message_id'] = $a->message_id;
-				  $temp['cid'] = $a->cid;
-				  $temp['ctype'] = $a->ctype;
-				  $temp['filename'] = $a->filename;
-				  if($content) $temp['content'] = $a->content;
-				  $temp['checksum'] = $a->checksum;
-				  $temp['size'] = $a->size;
+				  if($mid == "all") $temp['user'] = $this->getUser($a->user_id);
+				  else $temp['user_id'] = $a->user_id;
+				  $temp['appt_date'] = Carbon::parse($a->appt_date)->format("m/d/Y h:i A");
+				  $temp['amount'] = $a->amount;
+				  $temp['status'] = $a->status;
      			  $temp['date'] = $a->created_at->format("m/d/Y h:i A");
 				  $ret = $temp;
                }
 
                return $ret;			   
 		   }
-		   
-		   
-		   
-		  
-		   function createMessage($dt)
-		   {
-			  $status = isset($dt['status']) ? $dt['status'] : "unread";
-			   $ret = Messages::create(['fmail_id' => $dt['fmail_id'], 
-                                                      'username' => $dt['username'], 
-                                                      'sn' => $dt['sn'], 
-                                                      'sa' => $dt['sa'], 
-                                                      'subject' => $dt['subject'], 
-                                                      'content' => $dt['content'], 
-                                                      'label' => $dt['label'], 
-                                                      'status' => $status, 
-                                                      ]);
-                                                      
-                return $ret;
-		   }
-		   
-		   function getMessage($id)
-		   {
-			   $ret = [];
-			   $m = Messages::where('id',$id)->first();
-			   
-			   if($m != null)
-               {
-				  $temp = [];
-				  $temp['id'] = $m->id;
-				  $temp['fmail_id'] = $m->fmail_id;
-				  $temp['username'] = $m->username;
-				  $temp['sn'] = $m->sn;
-				  $temp['sa'] = $m->sa;
-				  $temp['subject'] = $m->subject;
-				  $temp['content'] = $m->content;
-				  $temp['excerpt'] = $this->clean(substr($m->content,0,33));
-				  $temp['label'] = $m->label;
-				  $temp['attachments'] = $this->getAttachments($m->id);
-				  $temp['status'] = $m->status;
-     			  $temp['date'] = $m->created_at->format("jS F,Y h:i A");
-     			  $temp['dd'] = $this->getdd($m->created_at);
-				  $ret = $temp;
-               }
 
-               return $ret;			   
-		   }
-		   
-		   function getMessages($dt)
-           {
-           	$ret = [];
-              $username = $dt['u'];
-              $label = $dt['l'];
-              
-              $params = ['username' => $username];
-              if($label != "all") $params['label'] = $label;
-                                  
-              
-			  $messages = Messages::where($params)->get();
-			  
-              if($messages != null)
-               {
-				   $messages = $messages->sortByDesc('created_at');	
-			  
-				  foreach($messages as $m)
-				  {
-					  $temp = $this->getMessage($m->id);
-					  array_push($ret,$temp);
-				  }
-               }                         
-                                  
-                return $ret;
-           }
-		   
-		   function updateMessage($data)
-		 	              {
-		 	   			   #dd($data);
-		 	   			 $ret = "error";
-		                  $m = Messages::where('id',$data['xf'])->first();
-			 
-			 
-		 	   			 if(!is_null($m))
-		 	   			 {
-							 switch(($data['op']))
-							 {
-								 case "read":
-								 case "unread":
-								   $m->update(['status' => "read"]);
-								 break;
-							 }
-		 	   				
-		 	   			   $ret = "ok";
-		 	   			 }
-           	
-                               return $ret;
-		 	              }
-						  
-			function deleteMessage($data)
-		 	              {
-		 	   			   #dd($data);
-		 	   			 $ret = "error";
-						 $arr = json_decode($data['dt']);
-						 #dd($arr);
-						 
-						 foreach($arr as $xf)
-						 {
-		                    $m = Messages::where(['id'=>$xf, 'username'=>$data['u']])->first();
-			 
-			 
-		 	   			   if(!is_null($m))
-		 	   			   {
-							  $atts = Attachments::where(['message_id'=>$m->id])->get();
-							  if($atts != null)
-							  {
-								  foreach($atts as $a)  $a->delete();
-							  }
-							  $fm = Fmails::where(['id'=>$m->fmail_id])->first();
-							  if($fm != null) $fm->delete();
-							 $m->delete();
-		 	   			   }
-           	             } 
-						 $ret = "ok";
-                               return $ret;
-		 	              }
-						  
-			function moveMessage($data)
-		 	              {
-		 	   			   #dd($data);
-		 	   			 $ret = "error";
-						 $arr = json_decode($data['dt']);
-						 
-						 foreach($arr as $xf)
-						 {
-		                  $m = Messages::where(['id'=>$xf])->first();
-			 
-			 
-		 	   			 if(!is_null($m))
-		 	   			 {
-							 $m->update(['label'=>$data['l']]);
-		 	   				
-		 	   			  
-		 	   			 }
-           	             }
-						 $ret = "ok";
-                               return $ret;
-		 	              }
-		   
-		    function parseMessage($fid)
-		   {
-			   $ret = [];
-			   
-			   $fm =  $this->getFmail($fid);
-			   //$this->createSetting(['u1' => count($fm)]);
-			   if(count($fm) > 0)
-			   {
-				   $m = json_decode($fm['message'],true);
-				   $t = $m['to']; $f = $m['from'];
-				   $r = $t['value'][0]; $s = $f['value'][0];
-				   $username = explode('@',$r['address']);
-				   
-				   $u = User::where('username',$username[0])->first();
-				   
-				   if($u == null)
-				   {
-					   $ret = ['msg' => "nice try"];
-				   }
-				   else
-				   {
-					   //Email
-				       $msg = [];
-				      # $msg['content'] = $m['textAsHtml'] == "<p></p>" ? $m['html'] : $m['textAsHtml'];
-				       $msg['content'] = $m['html'];
-				       $msg['subject'] = $m['subject'];
-				       $msg['fmail_id'] = $fid;
-				       $msg['username'] = $username[0];
-				       $msg['sn'] = ($s['name'] == null) ? "" : $s['name'];
-				       $msg['sa'] = $s['address'];
-				       $msg['label'] = "inbox";
-				       $msg['status'] = "unread";
-					   
-					   $mm = $this->createMessage($msg);
-					   
-					    //Attachments
-					   $fatts = $m['attachments'];
-					   
-					   foreach($fatts as $ff)
-					   {
-						   $atts = [];
-						   $content = $ff['content'];
-						   $atts['message_id'] = $mm->id;
-						   $atts['cid'] = $ff['cid'];
-						   $atts['ctype'] = $ff['contentType'];
-						   $atts['filename'] = $ff['filename'];
-						   $atts['content'] =  json_encode($content['data']);
-						   $atts['checksum'] = $ff['checksum'];
-						   $atts['size'] = $ff['size'];
-						   $this->createAttachment($atts);
-					   }
-					   
-					   //Push notification
-					   $xx = ($s['name'] == null) ? $s['address'] : $s['name'];
-					   $req = [
-					    'u' => $username[0],
-					    'title' => "New message from {$xx}",
-					    'body' => $m['subject'],
-					   ];
-					   $rr = $this->sendNotification($req);
-					   
-					   $ret = ['status' => "ok"];
-				   }
-			   
-				  
-				   
-			   }
-			   
-			   return $ret;
-		   }
-		   
-		   
-		   function getChatHistory($dt)
-		   {
-			   $ret = [];
-			   
-			   if(isset($dt['user_id']) && isset($dt['apt']))
-			   {
-				   $apt = Apartments::where('apartment_id',$apt)->first();
-				   
-				   if($apt != null)
-				   {
-					   $ret = $this->getMessages(['user_id' => $dt['user_id'],'host' => $apt->user_id]);
-				   }
-			   }
-			   
-			   return $ret;
-		   }
-		   
-		   function chat($dt)
-		   {
-			   $ret = null;
-			    $apt = Apartments::where('apartment_id',$dt['apartment_id'])->first();
-				
-				if($apt != null)
-				{
-					$dt['host'] = $apt->user_id;
-					$ret = $this->createMessage($dt);							   
-				}
-			   return $ret;
-		   }
-           
-           
-           function getRandomString($length_of_string) 
-           { 
-  
-              // String of all alphanumeric character 
-              $str_result = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'; 
-  
-              // Shufle the $str_result and returns substring of specified length 
-              return substr(str_shuffle($str_result),0, $length_of_string); 
-            }
-            
-
-		   function createPermission($dt)
-		   {
-			    $ret = Permissions::where('user_id',$dt['user_id'])
-				                ->where('ptag',$dt['ptag'])->first();
-				
-				if($ret == null)
-				{
-					$ret = Permissions::create(['user_id' => $dt['user_id'], 
-                                             'ptag' => $dt['ptag'],
-                                             'granted_by' => $dt['granted_by'],
-                                            ]);
-				}
-			   
-                                                      
-                return $ret;
-		   }
-		   
-		   function addPermissions($dt)
-		   {
-			   $ptags = $dt['ptags'];
-			   #dd($dt);
-			   foreach($ptags as $p)
-			   {
-				   $this->createPermission([
-				           'user_id' => $dt['xf'],
-				           'ptag' => $p,
-						   'granted_by' => $dt['granted_by']
-				   ]);
-			   }
-			   return "ok";
-		   }
-		   
-		   function getPermission($id)
-		   {
-			   $ret = [];
-			   $p = Permissions::where('id',$id)->first();
-			   
-			   if($p != null)
-               {
-				  $temp = [];
-				  $temp['id'] = $p->id;
-				  $temp['user_id'] = $p->user_id;
-				  $temp['ptag'] = $p->ptag;
-				  $temp['granted_by'] = User::where('id',$p->granted_by)->first();
-				  $temp['date'] = $p->created_at->format("jS F, Y");
-     			  $ret = $temp;
-               }
-
-               return $ret;			   
-		   }
-		   
-		   function getPermissions($user)
-           {
-           	$ret = [];
-			$ps = Permissions::where('user_id',$user->id)->get();
-			  
-              if($ps != null)
-               {
-				   $ps = $ps->sortByDesc('created_at');	
-			  
-				  foreach($ps as $p)
-				  {
-					  $temp = $this->getPermission($p->id);
-					  array_push($ret,$temp);
-				  }
-               }                         
-                                  
-                return $ret;
-           }
-		   
-		   function removePermission($dt)
+		   function updateAppointment($dt)
 		   {
 			   $ret = "error";
+			   $a = Appointments::where('id',$dt['xf'])->first();
+			  # dd($a);
+			 
 			   
-			   $p = Permissions::where('user_id',$dt['xf'])
-			                   ->where('ptag',$dt['p'])->first();
-			   
-			   if($p != null)
+			   if($a != null)
                {
-				  $p->delete();
+				  $temp = [];
+				  if(isset($dt['appt_date'])) $temp['appt_date'] = $dt['appt_date'];
+				  if(isset($dt['amount'])) $temp['amount'] = $dt['amount'];
+				  if(isset($dt['status'])) $temp['status'] = $dt['status'];
+				  
+				  $a->update($temp);
 				  $ret = "ok";
                }
 
                return $ret;			   
 		   }
-		   
-		   function hasPermission($user_id,$ps)
+
+		   function removeAppointment($dt)
 		   {
-			   $ret = true;
-			   /**$pps = Permissions::where('user_id',$user_id)
-			                     ->whereIn('ptag',$ps)->get();
+			   $ret = "error";
+			   $a = Appointments::where('id',$dt['xf'])->first();
+			  # dd($a);
+			 
 			   
-			   $hasAllPermissions = true;
-			   
-			   if($pps != null)
-			   {   
-				 foreach($ps as $p)
-				 {
-					$contains = $pps->contains(function($value) use($p){
-                                                          return $value->ptag == $p;
-                                                      });
-                    $hasAllPermissions = $hasAllPermissions && $contains;													  
-				 }
-				 if($hasAllPermissions) $ret = true;  
-			   } 
-			   **/
-			   return $ret;
+			   if($a != null)
+               {
+				  $a->delete();
+				  $ret = "ok";
+               }
+
+               return $ret;			   
 		   }
 		   
 		   
@@ -1500,505 +857,9 @@ function createSocial($data)
 		   }
 		   
 		   
-	   	function createFAQ($data)
-	              {
-	   			   #dd($data);
-	   			 $ret = null;
-			 
-			 
-	   				 $ret = Faqs::create(['tag' => $data['tag'], 
-	                                                         'question' => $data['question'], 
-	                                                         'answer' => $data['answer']
-	                                                         ]);
-	   			  return $ret;
-	              }
-
-	      function getFAQs()
-	      {
-	   	   $ret = [];
 	   
-	   	   $faqs = Faqs::where('id','>',"0")->get();
-	   
-	   	   if(!is_null($faqs))
-	   	   {
-	   		   foreach($faqs as $f)
-	   		   {
-	   		     $temp = $this->getFAQ($f->id);
-	   		     array_push($ret,$temp);
-	   	       }
-	   	   }
-	   
-	   	   return $ret;
-	      }
-		  
-	 	 function getFAQ($id)
-	            {
-	            	$ret = [];
-	                $f = Faqs::where('id',$id)->first();
- 
-	               if($f != null)
-	                {
-                                $temp['id'] = $f->id; 
-	                    	$temp['tag'] = $f->tag; 
-	                        $temp['question'] = $f->question; 
-	                        $temp['answer'] = $f->answer;
-	                        $temp['date'] = $f->created_at->format("jS F, Y"); 
-	                        $ret = $temp; 
-	                }                          
-                                                      
-	                 return $ret;
-	            }
-   
-  
-		   
-		   
-	   		  function updateFAQ($data)
-	              {
-	   			   #dd($data);
-	   			 $ret = "error";
-                 $f = Faqs::where('id',$data['xf'])->first();
-			 
-			 
-	   			 if(!is_null($f))
-	   			 {
-	   				 $s->update(['tag' => $data['tag'], 
-	                                                         'question' => $data['question'], 
-	                                                         'answer' => $data['answer']
-	                                                         ]);
-	   			   $ret = "ok";
-	   			 }
-           	
-                                                      
-	                   return $ret;
-	              }
-
-	   		   function removeFAQ($xf)
-	              {
-	   			    #dd($data);
-	   			    $ret = "error";
-	   			    $f = Faqs::where('id',$data['xf'])->first();
-			 
-			 
-	   			    if(!is_null($f))
-	   			    {
-	   				  $f->delete();
-	   			      $ret = "ok";
-	   			    }
-           
-	              }
-				  
-		  	   	function createFAQTag($data)
-		  	              {
-		  	   			   #dd($data);
-		  	   			 $ret = null;
-			 
-			 
-		  	   				 $ret = FaqTags::create(['tag' => $data['tag'], 
-		  	                                                         'name' => $data['name']
-		  	                                                         ]);
-		  	   			  return $ret;
-		  	              }
-
-		  	      function getFAQTags()
-		  	      {
-		  	   	   $ret = [];
-	   
-		  	   	   $tags = FaqTags::where('id','>',"0")->get();
-	   
-		  	   	   if(!is_null($tags))
-		  	   	   {
-		  	   		   foreach($tags as $t)
-		  	   		   {
-		  	   		     $temp = $this->getFAQTag($t->id);
-		  	   		     array_push($ret,$temp);
-		  	   	       }
-		  	   	   }
-	   
-		  	   	   return $ret;
-		  	      }
-				  
-		 	 	 function getFAQTag($id)
-		 	            {
-		 	            	$ret = [];
-		 	                $t = FaqTags::where('id',$id)->first();
- 
-		 	               if($t != null)
-		 	                {
-		 	                    	$temp['tag'] = $t->tag; 
-                                                $temp['id'] = $t->id; 
-		 	                        $temp['name'] = $t->name; 
-		 	                        $temp['date'] = $t->created_at->format("jS F, Y"); 
-		 	                        $ret = $temp; 
-		 	                }                          
-                                                      
-		 	                 return $ret;
-		 	            }
-   
-  
-		   
-		   
-		 	   		  function updateFAQTag($data)
-		 	              {
-		 	   			   #dd($data);
-		 	   			 $ret = "error";
-		                  $t = FaqTags::where('id',$id)->first();
-			 
-			 
-		 	   			 if(!is_null($t))
-		 	   			 {
-		 	   				 $t->update(['tag' => $data['tag'], 
-		 	                                                         'name' => $data['name']
-		 	                                                         ]);
-		 	   			   $ret = "ok";
-		 	   			 }
-           	
-                                                      
-		 	                   return $ret;
-		 	              }
-
-		 	   		   function removeFAQTag($xf)
-		 	              {
-		 	   			    #dd($data);
-		 	   			    $ret = "error";
-		 	   			    $t = FaqTags::where('id',$data['xf'])->first();
-			 
-			 
-		 	   			    if(!is_null($f))
-		 	   			    {
-		 	   				  $t->delete();
-		 	   			      $ret = "ok";
-		 	   			    }
-           
-		 	              }
-						  
-						  function getSiteStats()
-		          {
-			   $tu = User::where('id','>','0')->count();
-			   $tm = Messages::where('id','>','0')->count();
-			   
-			   $ret = [
-			     'total_users' => $tu,
-			     'total_messages' => $tm
-			   ];
-			   
-			   return $ret;
-		   }
-		   
-		   function createSession($data)
-		  	              {
-		  	   			   #dd($data);
-		  	   			 $ret = null;
-			 
-			 
-		  	   				 $ret = Sessions::create(['username' => $data['username'], 
-		  	                                          'tk' => $data['tk'],
-		  	                                          'etk' => $data['etk'],
-		  	                                        ]);
-		  	   			  return $ret;
-		  	              }
-
-		  	      function getSessions($u="all")
-		  	      {
-		  	   	   $ret = []; $sessions = [];
-	                     ['id' => $u];
-	                    if($u == "all") $sessions = Sessions::where('id','>',"0")->get();
-		  	   	   else $sessions = Sessions::where('username',$u)->get();
-	   
-		  	   	   if(!is_null($sessions))
-		  	   	   {
-		  	   		   foreach($sessions as $s)
-		  	   		   {
-		  	   		     $temp = $this->getSession($s->id);
-		  	   		     array_push($ret,$temp);
-		  	   	       }
-		  	   	   }
-	   
-		  	   	   return $ret;
-		  	      }
-				  
-		 	 	 function getSession($id)
-		 	            {
-		 	            	$ret = [];
-		 	                $s = Sessions::where('id',$id)->orWhere('tk',$id)->first();
- 
-		 	               if($s != null)
-		 	                {
-		 	                    	$temp['id'] = $s->id; 
-		 	                    	$temp['username'] = $s->username; 
-		 	                    	$temp['tk'] = $s->tk; 
-		 	                    	$temp['etk'] = $s->etk; 
-		 	                        $temp['date'] = $s->created_at->format("jS F, Y"); 
-		 	                        $ret = $temp; 
-		 	                }                          
-                                                      
-		 	                 return $ret;
-		 	            }
-				
-				function updateSession($data)
-		 	              {
-		 	   			   #dd($data);
-		 	   			 $ret = "error";
-		                  $s = Sessions::where('tk',$data['tk'])->first();
-			 
-			 
-		 	   			 if(!is_null($s))
-		 	   			 {
-		 	   				 $s->update(['etk' => $data['etk']]);
-		 	   			   $ret = "ok";
-		 	   			 }
-           	
-                               return $ret;
-		 	              }
-						  
-						  function removeSession($data)
-		 	              {
-		 	   			   #dd($data);
-		 	   			 $ret = "error";
-		                  $s = Sessions::where('tk',$data['tk'])->first();
-			 
-			 
-		 	   			 if(!is_null($s))
-		 	   			 {
-		 	   				 $s->delete();
-		 	   			   $ret = "ok";
-		 	   			 }
-           	
-                               return $ret;
-		 	              }
 		
-		function apiLogin($dt)
-        {
-        	$ret = ['status' => "error",'msg' => "nothing"]; $u = null;
-                 
-            if(Auth::attempt(['username' => $dt['u'],'password' => $dt['p'],'status'=> "enabled"],false))
-            {
-				// $u = User::where('username',$dt['u'])->first(); 
-            
-              	 $tk = $this->getRandomString(7);
-                  $this->createSession(['username' => $dt['u'],'tk' => $tk,'etk' => $dt['etk']]);
-                $ret = ['status' => "ok",'tk' => $tk];
-           }
-            
-           return $ret;       
-       }
-	   
-	   function apiLogout($dt)
-        {
-        	$ret = ['status' => "error",'msg' => "nothing"]; $u = null;
- 
-				 $s = Sessions::where(['username' => $dt['u'],'tk' => $dt['tk']])->first();
-				 if($s != null)
-				 {
-					Auth::logout();
-                    $s->delete();
-                    $ret = ['status' => "ok"];
-				 }        
-           return $ret;       
-       }
-		
-		function apiAuth($dt)
-		 	              {
-		 	   			    #dd($dt);
-		 	   			    $ret = false;
-							$tk = isset($dt['tk']) ? $dt['tk'] : "";
-		                      $u = isset($dt['u']) ? $dt['u'] : "";
-							  
-							if($tk == "kt")
-							{
-								$ret = true;
-							}
-							else
-							{
-		 	   			        $s = Sessions::where([
-                                                'username' => $u,
-                                                'tk' => $tk
-                                             ])->first(); 
-			 
-		 	   			        if($s != null)
-		 	   			        {
-		 	   				      $ret = true;
-		 	   			        }
-							}
-		                       
-                             return $ret;       
-		 	              }
-		function getCurrentSignature($u)
-        {
-        	$ret = [];
-        	$c = USignatures::where(['username' => $u,'current' => "yes"])->first();
-            if($c != null)
-            {
-            	$ret = $this->getUSignature($c->id);
-            }
-            return $ret;
-        }
-		
-		function sendMessage($dt)
-        {
-        	$u = $this->getUser($dt['u']);
-           $c = "";
-           $ret = ['status' => "error", 'msg' => "nothing"];
-           $sig = $this->getCurrentSignature($dt['u']);
-        	//u, m, c
-           $c = $dt['c'];
-           if(count($sig) > 0) $c.= "<br><br>".$sig['value'];
-           
-		   //attachments
-		   //if(i
-           $rr = [
-          'auth' => ["api",env('MAILGUN_API_KEY')],
-          'data' => [
-            'from' => $u['fname']." ".$u['lname']." <".$u['username']."@aceluxurystore.com>",
-            'to' => $dt['t'],
-            'subject' => $dt['s'],
-            'html' => $c
-          ],
-          'headers' => [],
-          'url' => env('MAILGUN_BASE_URL')."/messages",
-          'method' => "post"
-         ];
-		 
-		if(isset($dt['atts']) && count($dt['atts']) > 0)
-		{
-			$rr['atts'] = $dt['atts'];
-		}
-
-       $ret2 = $this->bomb($rr);
-		 
-		 #dd($ret2);
-		 if(isset($ret2->message) && $ret2->message == "Queued. Thank you.")
-		 {
-			 $ret = ['status' => "ok"];
-		 } 
-		 
-		 
-			 //save msg to db
-			 $msg = [];
-				       $msg['content'] = $c;
-				       $msg['subject'] = $dt['s'];
-				       $msg['fmail_id'] = "0";
-				       $msg['username'] = $u['username'];
-				       $msg['sn'] = $u['username'];
-				       $msg['sa'] = $dt['t'];
-				       $msg['label'] = "sent";
-				       $msg['status'] = "read";
-					   
-					   $mm = $this->createMessage($msg);
-
-		  
-		  return $ret;
-        }
-		
-		function replyMessage($dt)
-        {
-           $m = $this->getMessage($dt['m']);
-           $u = $this->getUser($dt['u']);
-           $c = "";
-           $ret = ['status' => "error", 'msg' => "nothing"];
-           
-           if(count($m) > 0 && count($u) > 0)
-           {
-        	//u, m, c
-           $c = $dt['c']."<br><br>On ".$m['date'].", ".$m['sn']." <".$m['sa']."> wrote: <br><br>".$m['content'];
-           $sig = $this->getCurrentSignature($dt['u']);
-           if(count($sig) > 0) $c.= "<br><br>".$sig['value'];
-           $subject = "Re: ".$m['subject'];
-		   $t = isset($dt['t']) ? $dt['t'] : $m['sa'];
-           $rr = [
-          'auth' => ["api",env('MAILGUN_API_KEY')],
-          'data' => [
-            'from' => $u['fname']." ".$u['lname']." <".$u['username']."@aceluxurystore.com>",
-            'to' => $t,
-            'subject' => $subject,
-            'html' => $c
-          ],
-          'headers' => [],
-          'url' => env('MAILGUN_BASE_URL')."/messages",
-          'method' => "post"
-         ];
-      
-       $ret2 = $this->bomb($rr);
-		 
-		 #dd($ret2);
-		 if(isset($ret2->message) && $ret2->message == "Queued. Thank you.") $ret = ['status' => "ok"];
-		 
-		   //save msg to db
-			 $msg = [];
-				       $msg['content'] = $c;
-				       $msg['subject'] = $subject;
-				       $msg['fmail_id'] = "0";
-				       $msg['username'] = $u['username'];
-				       $msg['sn'] = $u['username'];
-				       $msg['sa'] = $t;
-				       $msg['label'] = "sent";
-				       $msg['status'] = "read";
-					   
-					   $mm = $this->createMessage($msg);
-          }
-		  
-		  return $ret;
-       }
-       
-       function forwardMessage($dt)
-        {
-        	$m = $this->getMessage($dt['m']);
-           $u = $this->getUser($dt['u']);
-           $c = "";
-           $ret = ['status' => "error", 'msg' => "nothing"];
-           
-           if(count($m) > 0 && count($u) > 0)
-           {
-        	//u, m, c
-			/**
-			
-
-Date: Thu, Oct 14, 2021 at 10:19 AM
-Subject: Get 10% Off Your Showmax Subscription
-To: <kudayisitobi@gmail.com>
-			**/
-           $c = $dt['c']."<br><br>---------- Forwarded message ---------<br> ";
-		   $c.= "From: ".$m['sn']." <".$m['sa']."> <br>";
-		   $c.= "Date: ".$m['date']." <br>";
-		   $c.= "Subject: ".$m['subject']." <br>";
-		   $c.= "To: ".$u['username']."@aceluxurystore.com><br><br>".$m['content'];
-		   $sig = $this->getCurrentSignature($dt['u']);
-           if(count($sig) > 0) $c.= "<br><br>".$sig['value'];
-           $subject = "Fw: ".$m['subject'];
-		   
-           $rr = [
-          'auth' => ["api",env('MAILGUN_API_KEY')],
-          'data' => [
-            'from' => $u['fname']." ".$u['lname']." <".$u['username']."@aceluxurystore.com>",
-            'to' => $dt['t'],
-            'subject' => $subject,
-            'html' => $c
-          ],
-          'headers' => [],
-          'url' => env('MAILGUN_BASE_URL')."/messages",
-          'method' => "post"
-         ];
-      
-       $ret2 = $this->bomb($rr);
-		 
-		 #dd($ret2);
-		 if(isset($ret2->message) && $ret2->message == "Queued. Thank you.") $ret = ['status' => "ok"];
-		 
-		  //save msg to db
-			 $msg = [];
-				       $msg['content'] = $c;
-				       $msg['subject'] = $subject;
-				       $msg['fmail_id'] = "0";
-				       $msg['username'] = $u['username'];
-				       $msg['sn'] = $u['username'];
-				       $msg['sa'] = $dt['t'];
-				       $msg['label'] = "sent";
-				       $msg['status'] = "read";
-					   
-					   $mm = $this->createMessage($msg);
-          }
-		  
-		  return $ret;
-        }
+	
 		
 		function clean($str)
 		{
@@ -2017,198 +878,6 @@ To: <kudayisitobi@gmail.com>
 			
 			return $clear;
 		}
-		
-        function getContacts($u)
-        {
-        	$ret = [];
-        	$msgs = $this->getMessages(['u' => $u,'l' => "all"]);
-	
-        	if(count($msgs) > 0)
-	        {
-	        	foreach($msgs as $m) array_push($ret,$m['sa']);
-	        	$ret = array_unique($ret);
-	        }
-	        return $ret;
-        }
-		
-		function getdd($t)
-		{
-			$ret = ""; $fmt = "Y-m-d";
-			$today = date($fmt);
-			
-			if($t->format($fmt) == $today)
-			{
-				$ret = $t->format("h:i A");
-			}
-			else
-			{
-				$ret = $t->format("M d");
-			}
-			return $ret;
-		}
-		
-		 function createUSetting($data)
-           {
-			    $ret = USettings::create(['username' => $data['username'], 
-                                          'name' => $data['name'],
-                                          'value' => $data['value']
-                                        ]);
-                                                      
-                return $ret;
-           }
-		   
-		function getUSetting($id)
-	    {
-		   $temp = [];
-		   $s = USettings::where('id',$id)->first();
- 
-              if($s != null)
-               {
-				      $temp['name'] = $s->name;
-                      $temp['id'] = $s->id;   
-                       $temp['value'] = $s->value;                  
-                       $temp['username'] = $s->username; 
-                       $temp['date'] = $s->created_at->format("jS F, Y"); 
-                       $temp['updated'] = $s->updated_at->format("jS F, Y"); 
-                   
-               }      
-           return $temp;            	   
-        }
-		
-		function getUSettings($u)
-	      {
-	   	   $ret = [];
-	   
-	   	   $settings = USettings::where('username',$u)->get();
-	   
-	   	   if(!is_null($settings))
-	   	   {
-	   		   foreach($settings as $s)
-	   		   {
-	   		     $temp = $this->getUSetting($s->id);
-	   		     array_push($ret,$temp);
-	   	       }
-	   	   }
-	        return $ret; 
-	   	  }
-		  
-		function updateUSetting($u,$dt)
-	    { 
-              foreach($dt as $k => $v)
-               {
-				   $fields = ['username' => $u,'name' => $k];
-				       $s = USettings::where($fields)->first();
-                    if($s != null) $s->update(['value' => $v]);
-               }                 	   
-        }
-		
-		 function createUSignature($data)
-           {
-			    $ret = USignatures::create(['username' => $data['username'], 
-                                          'current' => $data['current'],
-                                          'value' => $data['value']
-                                        ]);
-                                                      
-                return $ret;
-           }
-		   
-		function getUSignature($id)
-	    {
-		   $temp = [];
-		   $s = USignatures::where('id',$id)->first();
- 
-              if($s != null)
-               {
-				      $temp['username'] = $s->username; 
-                       $temp['value'] = $s->value;  
-                      $temp['id'] = $s->id;                  
-                       $temp['current'] = $s->current; 
-                       $temp['date'] = $s->created_at->format("jS F, Y"); 
-                       $temp['updated'] = $s->updated_at->format("jS F, Y"); 
-                   
-               }      
-           return $temp;            	   
-        }
-		
-		function getUSignatures($u)
-	      {
-	   	   $ret = [];
-	   
-	   	   $sigs = USignatures::where('username',$u)->get();
-	   
-	   	   if(!is_null($sigs))
-	   	    {
-	   		   foreach($sigs as $s)
-	   		   {
-	   		     $temp = $this->getUSignature($s->id);
-	   		     array_push($ret,$temp);
-	   	       }
-	   	    }
-	           return $ret; 
-	   	  }
-		
-		function updateUSignature($u,$dt)
-	    { 
-               $fields = ['id' => $u];
-				  $v2 = [];
-				   if(isset($dt['current'])) $v2['current'] = $dt['current'];
-				   if(isset($dt['value'])) $v2['value'] = $dt['value'];
-				
-				       $s = USignatures::where($fields)->first();
-                    if($s != null) $s->update($v2);          	   
-        }
-		
-		function removeUSignature($xf)
-	    {
-		   $temp = [];
-		   $s = USignatures::where('id',$xf)->first();
- 
-              if($s != null)
-               {
-				     $s->delete();  
-               }      
-           return $temp;            	   
-        }
-        
-        function sendNotification($dt)
-	    {
-		   $ret = "error";
-		   $sessions = $this->getSessions($dt['u']);
-		   
-		   if(count($sessions) > 0)
-           {
-           	$objs = [];
-               
-               foreach($sessions as $s)
-               {
-               	if(strlen($s['etk']) > 0)
-                   {
-               	  $m = [];
-                     $m['to'] = $s['etk'];
-                     $m['title'] = $dt['title'];
-                     $m['body'] = $dt['body'];
-                     $m['data'] = ['type' => 'email'];
-                     array_push($objs,$m);
-                   }
-               }
-               
-               $rr = [
-          'type' => "raw",
-          'data' => json_encode($objs),
-          'headers' => [
-            'Accept' => "application/json",
-            'Accept-Encoding' => "gzip, deflate",
-            'Content-Type' => "application/json"
-         ],
-          'url' => "https://exp.host/--/api/v2/push/send",
-          'method' => "post"
-         ];
-        #dd($rr);
-       $ret = $this->bomb($rr);
-           }
-           
-           return $ret;            	   
-        }
 
 }
 ?>

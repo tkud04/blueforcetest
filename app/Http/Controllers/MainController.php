@@ -97,7 +97,9 @@ class MainController extends Controller {
 		{
 			$user = Auth::user();
 				  $v = "profile"; 
-				 
+				 $appts = $this->helpers->getAppointments($user->id);
+				 #dd($appts);
+				 array_push($cpt,'appts');
 		}
 		else
 		{
@@ -205,7 +207,7 @@ class MainController extends Controller {
 	  
 			 $validator = Validator::make($req, [
                              'appt_date' => 'required',
-                             'hours' => 'required'                  
+                             'hours' => 'required',                
                              'amount' => 'required'                  
          ]);
          
@@ -217,15 +219,191 @@ class MainController extends Controller {
          
          else
          {
-             $req['xf'] = $user->id;
+             $req['user_id'] = $user->id;
              $this->helpers->createAppointment($req);
-			 session()->flash("boook-status","ok");
+			 session()->flash("book-status","ok");
 			 return  redirect()->intended('profile');		
           }	 
 		 
 		
     }
 	
+	
+	  /**
+	 * Show the application home page.
+	 *
+	 * @return Response
+	 */
+	public function getAppointments(Request $request)
+    {
+		$user = null;
+		$nope = false;
+		$v = "";
+		
+		$signals = $this->helpers->signals;
+		$plugins = $this->helpers->getPlugins();
+        $cpt = ['user','signals','plugins'];
+		$req = $request->all();
+		
+		if(Auth::check())
+		{
+			$user = Auth::user();
+			
+			if($user->role == "admin")
+			{
+				$v = "appointments"; 
+				 $appts = $this->helpers->getAppointments();
+				 array_push($cpt,'appts');
+			}
+			else
+		    {
+			  return redirect()->intended('profile');
+		    }
+				  
+		}
+		else
+		{
+			return redirect()->intended('/');
+		}
+		
+		return view($v,compact($cpt));
+		
+    }
+	
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+    public function getRemoveAppointment(Request $request)
+    {
+        $user = null;
+		$req = $request->all();
+
+      if(Auth::check())
+		{
+			$user = Auth::user();
+			
+			if($user->role != "admin")
+			{
+			  return redirect()->intended('profile');
+		    }
+				  
+		}
+		else
+		{
+			return redirect()->intended('/');
+		}
+
+       #dd($req);
+	  
+			 $validator = Validator::make($req, [
+                             'xf' => 'required'               
+         ]);
+         
+         if($validator->fails())
+         {
+             session()->flash("validation-status-error","ok");
+			 return redirect()->back();
+         }
+         
+         else
+         {
+             $this->helpers->removeAppointment($req);
+			 session()->flash("remove-appt-status","ok");
+			 return  redirect()->intended('appointments');		
+          }	 
+		 
+		
+    }
+	
+	  /**
+	 * Show the application home page.
+	 *
+	 * @return Response
+	 */
+	public function getUsers(Request $request)
+    {
+		$user = null;
+		$nope = false;
+		$v = "";
+		
+		$signals = $this->helpers->signals;
+		$plugins = $this->helpers->getPlugins();
+        $cpt = ['user','signals','plugins'];
+		$req = $request->all();
+		
+		if(Auth::check())
+		{
+			$user = Auth::user();
+			
+			if($user->role == "admin")
+			{
+				$v = "users"; 
+				 $users = $this->helpers->getUsers();
+				 array_push($cpt,'users');
+			}
+			else
+		    {
+			  return redirect()->intended('profile');
+		    }
+				  
+		}
+		else
+		{
+			return redirect()->intended('/');
+		}
+		
+		return view($v,compact($cpt));
+		
+    }
+	
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+    public function getRemoveUser(Request $request)
+    {
+        $user = null;
+		$req = $request->all();
+
+      if(Auth::check())
+		{
+			$user = Auth::user();
+			
+			if($user->role != "admin")
+			{
+			  return redirect()->intended('profile');
+		    }
+				  
+		}
+		else
+		{
+			return redirect()->intended('/');
+		}
+
+       #dd($req);
+	  
+			 $validator = Validator::make($req, [
+                             'xf' => 'required'               
+         ]);
+         
+         if($validator->fails())
+         {
+             session()->flash("validation-status-error","ok");
+			 return redirect()->back();
+         }
+         
+         else
+         {
+             if($req['xf'] != $user->id) $this->helpers->removeUser($req);         
+			 session()->flash("remove-user-status","ok");
+			 return  redirect()->intended('users');		
+          }	 
+		 
+		
+    }
 	
 	
 	

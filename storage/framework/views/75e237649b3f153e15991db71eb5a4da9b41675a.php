@@ -1,20 +1,20 @@
 
-@extends('layout')
 
-@section('title',"Users")
 
-@section('scripts')
-  <link href="{{asset('lib/datatables/css/datatables.min.css')}}" rel="stylesheet" /> 
+<?php $__env->startSection('title',"Users"); ?>
+
+<?php $__env->startSection('scripts'); ?>
+  <link href="<?php echo e(asset('lib/datatables/css/datatables.min.css')); ?>" rel="stylesheet" /> 
 	
 	<!-- DataTables js -->
-	<script src="{{asset('lib/datatables/js/datatables.min.js')}}"></script>
-	 <script src="{{asset('lib/datatables/js/datatables-init.js')}}"></script>
+	<script src="<?php echo e(asset('lib/datatables/js/datatables.min.js')); ?>"></script>
+	 <script src="<?php echo e(asset('lib/datatables/js/datatables-init.js')); ?>"></script>
 	 
-@stop
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 
-@include('page-header',['title' => "Users"])
+<?php echo $__env->make('page-header',['title' => "Users"], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 
 <div class="content">
@@ -65,21 +65,21 @@ if(count($users) > 0)
 <tr>
 <td>
 <h2 class="table-avatar">
-<a href="{{$vu}}" class="avatar avatar-sm mr-2">
+<a href="<?php echo e($vu); ?>" class="avatar avatar-sm mr-2">
 <img class="avatar-img rounded-circle" src="img/instructor-01.jpg" alt="User Image">
 </a>
-<a href="{{$vu}}">{{$a['fname']}} <span>{{$a['lname']}}</span></a>
+<a href="<?php echo e($vu); ?>"><?php echo e($a['fname']); ?> <span><?php echo e($a['lname']); ?></span></a>
 </h2>
 </td>
-<td>{{$a['username']}} </td>
-<td>{{$a['role']}} </td>
-<td>{{$ad[0]}} <span class="d-block text-info">{{$ad[1]." ".$ad[2]}}</span></td>
+<td><?php echo e($a['username']); ?> </td>
+<td><?php echo e($a['role']); ?> </td>
+<td><?php echo e($ad[0]); ?> <span class="d-block text-info"><?php echo e($ad[1]." ".$ad[2]); ?></span></td>
 <td>
 <div class="table-action">
 <a href="javascript:void(0);" class="btn btn-sm bg-info-light">
 <i class="fas fa-eye"></i> View
 </a>
-<a href="{{$ru}}" class="btn btn-sm bg-danger-light">
+<a href="<?php echo e($ru); ?>" class="btn btn-sm bg-danger-light">
 <i class="fas fa-trash"></i> Remove
 </a>
 
@@ -110,4 +110,5 @@ if(count($users) > 0)
 </div>
 
  	
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\bkupp\lokl\repo\blueforcetest\resources\views/users.blade.php ENDPATH**/ ?>

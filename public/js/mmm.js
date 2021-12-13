@@ -197,153 +197,34 @@ $(document).ready(function() {
     });
 	
 	//MESSAGES
-	$("#mm-all").change(e => {
+	$("#book-hours").on('input',e => {
        e.preventDefault();
-	   let c = $("#mm-all").is(':checked'), cc;
-	   if(c){
-		   showElem(xx);
-           cc=true;		   
+	   let c = parseInt($("#book-hours").val()), cc = 0, p = 1200;
+	   if(c < 0 || isNaN(c)){
+		   cc = p;		   
 	   }
 	   else{ 
-		    hideElem(xx);
-            cc=false;			
+		    cc = p * c;			
 	   }   
-	   $('.mm').prop('checked', cc);        
+	   $("#book-amount").val(cc);        
     });
 	
-	$("#reply-btn, #more-reply").click(e => {
+	$("#b-form-btn").click(e => {
        e.preventDefault();
-	   editMode = "reply";
-	   
-	   $('#edit-menu').removeClass("d-inline-flex");
-	   $('#edit-menu').hide();
-	   
 	  
-	   $('#reply-form').addClass("d-inline-flex");
-	   showElem(['#reply-form']);	
-	   $('#edit-actions').addClass("d-inline-flex");
-	   showElem(['#edit-actions']);	
-	   scrollTo({id:"#reply-to"});
-    });
-	
-	$("#forward-btn, #more-forward").click(e => {
-       e.preventDefault();
-	   editMode = "forward";
-	   
-	   $('#edit-menu').removeClass("d-inline-flex");
-	   $('#edit-menu').hide();
-	   
-	   
-	   $('#forward-form').addClass("d-inline-flex");
-	   showElem(['#forward-form']);	
-	   $('#edit-actions').addClass("d-inline-flex");
-	   showElem(['#edit-actions']);	
-	   scrollTo({id:"#forward-to"});
-    });
-	
-	$("#discard-btn").click(e => {
-       e.preventDefault();
-	   
-	   $(`#${editMode}-form`).removeClass("d-inline-flex");
-	   hideElem([`#${editMode}-form`]);	
-	   $('#edit-actions').removeClass("d-inline-flex");
-	   hideElem(['#edit-actions']);	
-	   editMode = "";
-	   $('#edit-menu').addClass("d-inline-flex");
-	   showElem(['#edit-menu']);
-    });
-	
-	$("#submit-btn").click(e => {
-       e.preventDefault();
-
-	   let u = $('#u').val(), m = $('#m').val(), t = $(`#${editMode}-to`).val(), c = $(`#${editMode}-box`).val();
-	   
-	   
-	   $('#edit-actions').removeClass("d-inline-flex");
-	   hideElem(['#edit-actions']);	
-	   showElem(['#edit-loading']);
-	        let fd = new FormData();
-	       fd.append("u",u);
-	       fd.append("tk","kt");
-	       fd.append("m",m);
-	       fd.append("xf",editMode);
-	       fd.append("c",c);
-	
-	   if(editMode == "reply"){
-	      reply(fd);
-       }
-       
-       else if(editMode == "forward"){
-	      fd.append("t",t);
-	      fwd(fd);
-       }
-		 
-		 
-    });
-	
-	$(".inbox-all-btn").click(e => {
-       e.preventDefault();
-
-	   let ret = [];
-	   $(`.mm`).each((index, obj) => {
-        if (obj.checked === true) {
-            ret.push(obj.getAttribute('data-xf'));
-        }
-    });
-	  moveToInbox(ret);
-		 
-    });
-	
-	$(".spam-all-btn").click(e => {
-       e.preventDefault();
-
-	   let ret = [];
-	   $(`.mm`).each((index, obj) => {
-        if (obj.checked === true) {
-            ret.push(obj.getAttribute('data-xf'));
-        }
-    });
-	  markSpam(ret);
-		 
-    });
-	
-	$("#trash-all-btn").click(e => {
-       e.preventDefault();
-
-	   let ret = [];
-	   $(`.mm`).each((index, obj) => {
-        if (obj.checked === true) {
-            ret.push(obj.getAttribute('data-xf'));
-        }
-    });
-	  trash(ret);
-		 
-    });
-	
-	$("#delete-all-btn").click(e => {
-       e.preventDefault();
-
-	   let ret = [];
-	   $(`.mm`).each((index, obj) => {
-        if (obj.checked === true) {
-            ret.push(obj.getAttribute('data-xf'));
-        }
-    });
-	  deleteMessage(ret);
-		 
-    });
-	
-	$("#unread-all-btn").click(e => {
-       e.preventDefault();
-
-	   let ret = [];
-	   $(`.mm`).each((index, obj) => {
-        if (obj.checked === true) {
-            ret.push(obj.getAttribute('data-xf'));
-        }
-    });
-	  trash(ret);
-		 
+       hideInputErrors("login");	  
+      let h = $('#book-hours').val(), d = $('#book-appt-date').val(), a = $('#book-amount').val();
+		  
+		  
+	   if(h == "" || d == "" || a == ""){
+		  Swal.fire({
+			 icon: 'error',
+             title: "Please fill all the required fields"
+           });
+	   }
+	   else{
+		 $('#b-form').submit();   
+	   }
     });
 	
 	
