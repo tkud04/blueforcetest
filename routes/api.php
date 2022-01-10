@@ -54,3 +54,6 @@ Route::get('tb', 'APIController@getTestBomb');
 Route::get('xx', 'APIController@getTest');
 
 Route::post('sn','APIController@postSendNotification');
+
+Route::post('auth0-login','APIController@postAuth0Login');
+
