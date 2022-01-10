@@ -677,6 +677,57 @@ class APIController extends Controller {
 	
 	
 	
+	/**
+	 * Auth0 Authorization token API.
+	 *
+	 * @return Response
+	 */
+	public function postAuth0Login(Request $request)
+    {
+		$req = $request->all();
+		
+		$ret = ['status' => "error",'msg' => "forbidden"];
+
+		$v = Validator::make($req,[
+		                    'client_id' => 'required',
+		                    'code_verifier' => 'required',
+                                    'code' => 'required',
+			            'redirect_uri' => 'required'
+		                   ]);
+						
+		if($v->fails())
+                {
+                	$ret['msg'] = "validation";
+                }
+		else
+                {
+                    
+			$rr = [
+                         //'auth' => ["api",env('MAILGUN_API_KEY')],
+          'data' => [
+            'grant_type' => "authorization_code",
+            'client_id' => $req["client_id"],
+	    'code_verifier' => $req["code_verifier"],
+	    'code' => $req["code"],
+	    'redirect_uri' => $req["redirect_uri"],
+          ],
+          'headers' => [],
+          'url' => "https://pensionjar-development.eu.auth0.com/oauth/token",
+          'method' => "post"
+         ];
+		 
+       $ret2 = $this->bomb($rr);
+			
+                    $ret = ['status' => "ok",'data' => $ret2];
+                }
+        
+		
+		return json_encode($ret);
+		
+    }
+	
+	
+	
 
 	/**
 	 * Show the application welcome screen to the user.
